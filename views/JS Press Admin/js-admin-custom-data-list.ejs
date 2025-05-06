@@ -1,0 +1,657 @@
+
+<html>
+    <head>
+        <title>Please wait ....</title>
+        <%- include('jsa-head') %>
+        <link rel="stylesheet" href="/js-builder/form.css">
+        <link data-sc="true" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sceditor@3/minified/themes/default.min.css" />
+        <script data-sc="true" src="https://cdn.jsdelivr.net/npm/sceditor@3/minified/sceditor.min.js"></script>
+        <script data-sc="true" src="https://cdn.jsdelivr.net/npm/sceditor@3/minified/formats/xhtml.min.js"></script>
+    </head>
+    <body>
+        <style>
+            
+        
+.js-dc-main-container {
+
+display: flex;
+width: 80%;
+min-height: 100px;
+gap: 1em;
+flex-grow: 1;
+flex-wrap: wrap;
+justify-content: flex-start;
+align-items: flex-start;
+align-content: flex-start;
+flex-direction: row;
+overflow-x: hidden;
+background-color: rgba(201, 201, 201, 1);
+padding-top: 5px;
+padding-right: 5px;
+padding-bottom: 5px;
+padding-left: 5px;
+transition: 0.2s;
+box-sizing: border-box;
+}
+
+
+
+.js-custom-data-list-fieldset {
+
+display: flex;
+min-height: 30vh;
+flex-grow: 1;
+justify-content: flex-start;
+align-items: flex-start;
+flex-direction: column;
+margin-right: 3px;
+margin-bottom: 10px;
+margin-left: 3px;
+padding-top: 1%;
+padding-right: 2%;
+padding-bottom: 1%;
+padding-left: 2%;
+border-style: solid;
+border-top-width: 1px;
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-left-width: 1px;
+border-color: rgba(148, 148, 148, 1);
+box-sizing: border-box;
+}
+
+
+
+.js-custom-data-list-fieldset:hover {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+
+.js-custom-data-list-fieldset:active {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+
+@media screen and (max-width: 900px) {
+.js-custom-data-list-fieldset {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+}
+@media screen and (max-width: 600px) {
+.js-custom-data-list-fieldset {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+}
+.js-custom-data-list-form {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-cd-title-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-cd-title-input {
+
+width: 100%;
+margin-left: 10px;
+}
+
+
+
+.js-cd-url-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-cd-url-input {
+
+width: 100%;
+margin-left: 10px;
+}
+
+
+
+.js-cd-text-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-cd-text-input {
+
+width: 100%;
+margin-left: 10px;
+}
+
+
+
+.js-cd-number-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-cd-number-input {
+
+width: 100%;
+margin-left: 10px;
+}
+
+
+
+.js-cd-email-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-cd-email-input {
+
+width: 100%;
+margin-left: 10px;
+}
+
+
+
+.js-cd-select-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-cd-select-input {
+
+width: 50%;
+margin-left: 10px;
+padding-top: 10px;
+padding-right: 30px;
+padding-bottom: 10px;
+padding-left: 30px;
+cursor: pointer;
+}
+
+
+
+.js-cd-password-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-cd-checkbox-div {
+
+display: flex;
+width: 100%;
+gap: 1em;
+flex-grow: 1;
+align-items: center;
+flex-direction: row;
+margin-top: 5px;
+margin-left: 10px;
+box-sizing: border-box;
+}
+
+
+
+.js-cd-checkbox-label {
+
+max-width: 100%;
+margin-top: 6px;
+}
+
+.js-cd-checkbox-input{
+    margin-top: -6px;
+}
+
+
+
+.js-cd-media-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-cd-media-input {
+
+max-width: 100%;
+padding-top: 0%;
+padding-right: 1%;
+padding-bottom: 0%;
+padding-left: 1%;
+color: #004d4d;
+font-weight: 400;
+font-style: italic;
+text-decoration: underline;
+font-size: 12px;
+}
+
+
+
+.js-cd-media-button {
+
+background-color: rgba(15, 97, 97, 1);
+margin-left: 10px;
+padding-top: 5px;
+padding-right: 20px;
+padding-bottom: 5px;
+padding-left: 20px;
+transition: 0.5s;
+outline-style: none;
+outline-width: 0.25em;
+outline-color: rgba(0, 0, 0, 1);
+outline-style: none;
+border-style: solid;
+border-top-width: 1px;
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-left-width: 1px;
+border-color: rgba(45, 128, 139, 1);
+color: #f2f2f2;
+}
+
+
+
+.js-cd-media-button:hover {
+
+background-color: #00ffff;
+border-color: rgba(NaN, NaN, NaN, 1);
+color: #303030;
+}
+
+
+.js-cd-media-button:active {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+
+@media screen and (max-width: 900px) {
+.js-cd-media-button {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+}
+@media screen and (max-width: 600px) {
+.js-cd-media-button {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+}
+.js-cd-color-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-cd-color-input {
+
+width: 50%;
+margin-left: 10px;
+}
+
+
+
+.js-cd-password-input {
+
+width: 100%;
+margin-left: 10px;
+}
+
+
+
+.js-cd-textarea-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-dc-WYSIWYG-div {
+
+display: flex;
+width: 100%;
+min-height: 30vh;
+gap: 1em;
+flex-grow: 1;
+justify-content: flex-start;
+align-items: flex-start;
+flex-direction: column;
+margin-top: 6px;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+box-sizing: border-box;
+}
+
+
+
+.js-dc-WYSIWYG-label {
+
+max-width: 100%;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+}
+
+
+
+.js-dc-WYSIWYG-input {
+
+width: 100%;
+min-height: 80px;
+background-color: rgba(214, 214, 214, 0.84) !important;
+font-family: Lato;
+color: #000000 !important;
+font-weight: 300;
+font-size: 14px !important;
+}
+
+
+
+.js-cd-textarea-input {
+
+width: 100%;
+min-height: 80px;
+background-color: rgba(214, 214, 214, 0.84) !important;
+font-family: Lato;
+color: #000000 !important;
+font-weight: 300;
+font-size: 14px !important;
+}
+
+
+
+.js-cd-save-div {
+
+display: flex;
+width: 100%;
+min-height: 30px;
+gap: 0.1em;
+flex-grow: 1;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin-top: 6px;
+margin-left: 10px;
+padding-top: 1%;
+padding-right: 1%;
+padding-bottom: 1%;
+padding-left: 1%;
+box-sizing: border-box;
+}
+
+
+
+.js-cd-save-button {
+
+width: 100%;
+background-color: rgba(0, 148, 148, 0.84);
+margin-top: 6px;
+padding-top: 8px;
+padding-right: 20px;
+padding-bottom: 8px;
+padding-left: 20px;
+transition: 0.3s;
+cursor: pointer;
+outline-style: none;
+outline-width: 0.25em;
+outline-color: rgba(0, 0, 0, 1);
+outline-style: none;
+border-style: solid;
+border-top-width: 2px;
+border-right-width: 2px;
+border-bottom-width: 2px;
+border-left-width: 2px;
+border-color: rgba(110, 110, 110, 0);
+color: #ffffff;
+}
+
+
+
+.js-cd-save-button:hover {
+
+background-color: rgba(0, 77, 75, 1);
+border-top-width: 2px;
+border-right-width: 2px;
+border-bottom-width: 2px;
+border-left-width: 2px;
+border-color: rgba(0, 128, 119, 1);
+color: #00ffff;
+}
+
+
+.js-cd-save-button:active {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+
+@media screen and (max-width: 900px) {
+.js-cd-save-button {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+}
+@media screen and (max-width: 600px) {
+.js-cd-save-button {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+}
+.js-cd-img-preview{
+    width: 150px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+        </style>
+        <section id="js-press-dashboard-container" class="js-press-dashboard-container" lazydev="18e0835fb461">
+            <form id="js-dc-main-container" class="js-dc-main-container" lazydev="18f2807e3e91">
+                <fieldset id="js-custom-data-list-fieldset" class="js-custom-data-list-fieldset">
+                <legend id="js-custom-data-list-legend" class="js-custom-data-list-form">
+                Please wait....
+                </legend>
+
+                <h6 id="Add-custom-table" class="lazyclass18e1294df881 none-mode">
+                    <icon id="icon-18e1294df881" class="fa-solid fa-eye" style="padding-right: 1em;">
+                    
+                    </icon>
+              
+                    
+                  View Post
+              
+                    </h6>
+          
+                <label id="js-cd-title-label" class="js-cd-title-label" lazydev="18f2807e3d91" for="" accesskey="">
+                Title : 
+                </label>
+          
+                <input type="text" id="js-cd-title-input" class="js-cd-title-input" lazydev="18f2807e3dc1">
+                <label id="js-cd-url-label" class="js-cd-url-label" lazydev="18f2807e3de1" for="" accesskey="">
+                Url : 
+                </label>
+          
+                <input type="text" id="js-cd-url-input" class="js-cd-url-input" lazydev="18f2807e3e11">
+                <!-- <label id="js-cd-text-label" class="js-cd-text-label" lazydev="18f280a4d121" for="" accesskey="">
+                Input Text Label : (*required)
+                </label>
+          
+                <input type="text" id="js-cd-text-input" class="js-cd-text-input" lazydev="18f280a65aa1">
+                <label id="js-cd-number-label" class="js-cd-number-label" lazydev="18f280c325a1" for="" accesskey="">
+                Input Text Number : (min : -100 , max : 100) (*required)
+                </label>
+          
+                <input type="Number" id="js-cd-number-input" class="js-cd-number-input" lazydev="18f280c5d131">
+                <label id="js-cd-email-label" class="js-cd-email-label" lazydev="18f2810a5ea1" for="" accesskey="">
+                Input Email Label : (*required)
+                </label>
+          
+                <input type="email" id="js-cd-email-input" class="js-cd-email-input" lazydev="18f281073f31">
+                <label id="js-cd-select-label" class="js-cd-select-label" lazydev="18f281258891" for="" accesskey="">
+                Input Select Label : (*required)
+                </label>
+          
+                <select id="js-cd-select-input" class="js-cd-select-input" lazydev="18f2812ec221" selectoption="{Value1,Name1},{Value2,Name2,selected},{Value3,Name3}">
+                
+                    <option value="Value1">
+                Name1
+                </option>
+          
+                
+                    <option value="Value2" selected="">
+                Name2
+                </option>
+          
+                
+                    <option value="Value3">
+                Name3
+                </option>
+          
+                
+                </select>
+          
+                <label id="js-cd-password-label" class="js-cd-password-label" lazydev="18f281522421" for="" accesskey="">
+                Input Password Label : (*required)
+                </label>
+          
+                <input type="password" id="js-cd-password-input" class="js-cd-password-input" lazydev="18f2815b6b21">
+                <div id="js-cd-checkbox-div" class="js-cd-checkbox-div" lazydev="18f2818beb21">
+                <input type="checkbox" id="js-cd-checkbox-input" class="js-cd-checkbox-input" lazydev="18f28180bba1">
+                <label id="js-cd-checkbox-label" class="js-cd-checkbox-label" lazydev="18f281870011" for="" accesskey="">
+                Input Password Label : (*required)
+                </label>
+          
+                
+                </div>
+          
+                <label id="js-cd-media-label" class="js-cd-media-label" lazydev="18f28219bd81" for="" accesskey="">
+                Input Media Label : (*required)
+                </label>
+          
+                <label id="js-cd-media-input" class="js-cd-media-input" lazydev="18f2823c2181" for="" accesskey="">
+                 .../Media_data.jpeg
+                </label>
+          
+                <button id="js-cd-media-button" class="js-cd-media-button" lazydev="18f281dd37a1" type="button">
+                <icon id="icon-18f281dd37a1" class="fas fa-images" style="padding-right: 1em;">
+                
+                </icon>
+          
+                Open Media Manager
+                </button>
+          
+                <label id="js-cd-color-label" class="js-cd-color-label" lazydev="18f2825e1f01" for="" accesskey="">
+                Input Color Label : (*required)
+                </label>
+          
+                <input type="color" id="js-cd-color-input" class="js-cd-color-input" lazydev="18f282612111">
+                <label id="js-cd-textarea-label" class="js-cd-textarea-label" lazydev="18f28280f7f1" for="" accesskey="">
+                Input Textarea Label : (*required)
+                </label>
+          
+                <textarea id="js-cd-textarea-input" class="js-cd-textarea-input" lazydev="18f282860d01" rows="4" style="height: 77px;">      
+                </textarea>
+          
+                <div id="js-dc-WYSIWYG-div" class="js-dc-WYSIWYG-div" lazydev="18f284d88551">
+                <label id="js-dc-WYSIWYG-label" class="js-dc-WYSIWYG-label" lazydev="18f284ed2b31" for="" accesskey="">
+                Input WYSIWYG Label : (*required)
+                </label>
+          
+                <textarea id="js-dc-WYSIWYG-input" class="js-dc-WYSIWYG-input" lazydev="18f28552f631" rows="4" style="height: 77px;">      
+                </textarea>
+          
+                
+                </div> -->
+          
+                <div id="js-cd-save-div" class="js-cd-save-div" lazydev="18f2807e3e41">
+                <button id="js-cd-save-button" class="js-cd-save-button" lazydev="18f2807e3e61" type="button">
+                <icon id="icon-18f2807e3e61" class="fa fa-check-circle" style="padding-right: 1em;">
+                
+                </icon>
+          
+                SAVE CUSTOM DATA
+                </button>
+          
+                
+                </div>
+          
+                
+                </fieldset>
+          
+                
+                </form>
+            <%- include('jsa-sidebar') %>
+            <script src="/public/function/custom_data_list.js"></script>
+        </section>
+    </body>
+</html>

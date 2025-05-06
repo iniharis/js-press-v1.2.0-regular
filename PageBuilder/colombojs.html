@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image gallery</title> 
+        
+    </head>
+    <body>
+        <div>
+            <h1>Sri Lankan Beautiful Places</h1>
+        </div>
+        <hr>
+        <h2>Gallery</h2>
+       
+      <div class = slid>
+        <div class="leftslid">
+            <div class="gallery" id="galleryshow">
+                <img id="mainimg" src="https://images.pexels.com/photos/2403209/pexels-photo-2403209.jpeg?auto=compress&cs=tinysrgb&w=600
+                " alt="image1">
+            </div>
+        </div>
+
+        <div class="rightslid">
+            <H1 id="maintitle">Sri Lanka</H1>
+            <paragraph id="maintext">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Sed eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            </paragraph>
+
+        </div>
+      </div>
+      <div class="image-container">
+
+        <div class="images">
+            <img class="imgsrc" src="https://images.pexels.com/photos/2403209/pexels-photo-2403209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+            " alt="arfs">
+            <div class="title">Sri Lanka</div>
+            <paragraph class="hidden">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Sed eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            </paragraph>  
+        </div>
+
+        <div class="images">
+            <img class="imgsrc" src="https://images.pexels.com/photos/1998439/pexels-photo-1998439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+            " alt="sig">
+            <div class="title">Sigiriya</div>
+            <paragraph class="hidden">
+                "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Sed eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            </paragraph> 
+        </div>
+
+        <div class="images">
+            <img class="imgsrc" src="https://images.pexels.com/photos/319892/pexels-photo-319892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+            " alt="rfs">
+            <div class="title">damn</div>
+            <paragraph class="hidden">
+                "3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Sed eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            </paragraph>  
+        </div>
+
+        
+    </div>
+    <script>
+        let mainIMG = document.querySelector("#mainimg");
+        let mainTitle = document.querySelector("#maintitle");
+        let mainText = document.querySelector("#maintext");
+        let thumbnails = document.querySelectorAll(".images");
+        let container = document.querySelector(".slid");
+        thumbnails.forEach(element => {
+            element.addEventListener("mouseover", ()=>{
+                showImage(element);
+               // console.log(element.classList);
+            })
+        });
+        function showImage(target){
+            // console.log(target.classList);
+            let newImage = target.querySelector(".imgsrc").getAttribute("src");
+            mainIMG.setAttribute("src", newImage);
+            let newTitle = target.querySelector(".title").textContent;
+            mainTitle.textContent = newTitle;
+            let newText = target.querySelector(".hidden").textContent;
+            mainText.textContent = newText;
+
+        }
+      </script>
+    
+    <style>
+
+        h2{
+            text-align: center;
+        }
+
+        .gallery{
+          display: flex;
+          max-width: 80%;
+          margin-bottom: 30px;
+          align-items: center;
+
+        }
+        #mainimg {
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+        height: 60vh;
+        }
+
+        .image-container{
+        display: flex;
+        width: 100%;
+        }
+
+        .images{
+          float: left;
+          margin-bottom: 20px;
+          margin-left: 20px;
+          z-index: 1;
+        }
+        
+        .images > img{
+          width: 80%;
+          height: 30vh;
+          object-fit: cover;
+          cursor: pointer;
+          
+        }
+        .title{
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .slid{
+          margin-top: 30px;
+          width: 100%;
+        }
+
+        .leftslid{
+          float: left;
+          width: 60%;
+
+        }
+
+        .rightslid{
+        display: block;
+        padding-right: 20px;
+        height: 60vh;
+        }
+
+
+    </style>
+    </body>
+</html>

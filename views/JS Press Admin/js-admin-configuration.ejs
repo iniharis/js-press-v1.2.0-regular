@@ -1,0 +1,231 @@
+
+<html>
+    <head>
+        <title>JS Admin Web.Config</title>
+        <%- include('jsa-head') %>
+    </head>
+    <body>
+        <section id="js-press-dashboard-container" class="js-press-dashboard-container" lazydev="18e0835fb461">
+            <div id="js-admin-configuration-dashboard" class="js-admin-configuration-dashboard" lazydev="18e08368b351">
+            <div id="js-configuration-page-body" class="js-configuration-page-body" lazydev="18e08a400c91">
+            <form id="js-press-web-configuration" class="js-press-web-configuration" lazydev="18e1d0aa9951">
+            <fieldset id="js-press-web-configuration-fieldset" class="js-press-web-configuration-fieldset" lazydev="18e1d0c6cb51">
+            <legend id="js-press-web-configuration-legend" class="js-press-web-configuration-legend" lazydev="18e1d0fb99b1">
+            Site Configuration
+            </legend>
+      
+            <label id="js-press-config-label-title" class="js-press-config-label-title" lazydev="18e1d13e6f91" for="" accesskey="">
+            SITE TITLE
+            </label>
+      
+            <input type="text" id="js-press-config-input-title" class="js-press-config-input-title" lazydev="18e1d19ad921">
+            <label id="js-press-config-label-desc" class="js-press-config-label-desc" lazydev="18e1d3459be1" for="" accesskey="">
+            SITE DESCRIPTION
+            </label>
+      
+            <textarea id="js-press-config-input-desc" class="js-press-config-input-desc" lazydev="18e1d2aa2cb1">      
+            </textarea>
+      
+            <label id="js-press-config-label-favicon" class="js-press-config-label-favicon" lazydev="18e1d3475261" for="" accesskey="">
+            FAVICON
+            </label>
+      
+            <input type="file" id="js-press-config-input-favicon" class="js-press-config-input-favicon" lazydev="18e1d1aa99b1">
+            <label id="js-press-config-label-logo" class="js-press-config-label-logo" lazydev="18e1d347f851" for="" accesskey="">
+            SITE LOGO
+            </label>
+      
+            <input type="file" id="js-press-config-input-logo" class="js-press-config-input-logo" lazydev="18e1d1ae4711">
+            <label id="js-press-config-label-date-format" class="js-press-config-label-date-format" lazydev="18e1d34ba661" for="" accesskey="">
+            DATE FORMAT
+            </label>
+      
+            <select id="js-press-config-input-date-format" class="js-press-config-input-date-format" lazydev="18e1d1bde921" selectoption="{ISO 8601,ISO 8601 (ex: 2024-03-08)},{Long Date Format,Long Date Format (ex:March 8 2024)},{Short Date Format,Short Date Format (ex:08 Mar 2024)},{D-M-D-Y, D-M-D-Y (ex:Wednesday - March 8 2024)},">
+            <option value="ISO 8601">
+            ISO 8601 (ex: 2024-03-08)
+            </option>
+      
+            <option value="Long Date Format">
+            Long Date Format (ex:March 8 2024)
+            </option>
+      
+            <option value="Short Date Format">
+            Short Date Format (ex:08 Mar 2024)
+            </option>
+      
+            <option value="D-M-D-Y">
+            D-M-D-Y (ex:Wednesday - March 8 2024)
+            </option>
+      
+            
+            </select>
+            <label class="js-press-config-label-title">
+                FONTAWESOME CDN
+            </label>
+            <input type="text" id="js-press-config-input-font_awesome" class="js-press-config-input-title">
+      
+            <button id="js-press-config-save-button" class="js-press-config-save-button" lazydev="18dd06a5d031" type="button">
+            <icon id="icon-18dd06a5d031" class="fa fa-sign-in" style="padding-right: 1em;">
+            
+            </icon>
+      
+            SAVE CONFIGURATION
+            </button>
+      
+            
+            </fieldset>
+            <fieldset id="js-press-web-smtp-fieldset" class="js-press-web-configuration-fieldset none-mode">
+                <legend class="js-press-web-configuration-legend">
+                Webmail
+                </legend>
+          
+                <label class="js-press-config-label-title">
+                SMTP HOST
+                </label>
+          
+                <input placeholder="mail.mydomain.com" type="text" id="js-press-config-smtp-host" class="js-press-config-input-title">
+                <label class="js-press-config-label-title">
+                    SMTP PORT
+                </label>
+          
+                <input placeholder="465" type="number" id="js-press-config-smtp-port" class="js-press-config-input-title">
+          
+                <label class="js-press-config-label-favicon">
+                SMTP SECURE
+                </label>
+          
+                <select id="js-press-config-input-smtp-secure" class="js-press-config-input-date-format" >
+                    <option value="true">
+                    True
+                    </option>
+              
+                    <option value="false">
+                    False
+                    </option>
+                </select>
+                <label class="js-press-config-label-title">
+                    SMTP USERNAME
+                </label>
+          
+                <input placeholder="example@mydomain.com" type="text" id="js-press-config-smtp-username" class="js-press-config-input-title">
+                <label class="js-press-config-label-title">
+                    SMTP PASSWORD
+                </label>
+                <input placeholder="Type Your SMTP Password" type="text" id="js-press-config-smtp-password" class="js-press-config-input-title">
+                <label class="js-press-config-label-title">
+                    MAIL RECEIVER
+                </label>
+                <input placeholder="example@mydomain.com" type="text" id="js-press-config-mail-receiver" class="js-press-config-input-title">
+                <button id="js-press-smtp-save-button" class="js-press-config-save-button" lazydev="18dd06a5d031" type="button">
+                <icon id="icon-18dd06a5d031" class="fa fa-sign-in" style="padding-right: 1em;">
+                
+                </icon>
+          
+                SAVE CONFIGURATION
+                </button>
+          
+                
+                </fieldset>
+            <fieldset id="js-press-css-fieldset" class="js-press-web-configuration-fieldset none-mode">
+                <legend class="js-press-web-configuration-legend" lazydev="18e1d0fb99b1">
+                    3rd Party CSS Frameworks
+                </legend>
+
+                <label class="js-press-config-label-title" lazydev="18e1d13e6f91" for="" accesskey="">
+                    Css Framework Arrays
+                </label>
+                <div id="css-framework-list-container" class="framework-list-container">
+                </div>
+                    <button id="js-press-css-add-button" style="width: 100%" class="js-press-config-save-button" lazydev="18dd06a5d031" type="button">
+                        <icon class="fa fa-plus-circle" style="padding-right: 1em;">
+                        
+                        </icon>
+                  
+                        Add Frameworks
+                        </button>
+                <button id="js-press-css-save-button" class="js-press-config-save-button" type="button">
+                    <icon id="icon-18dd06a5d031" class="fa fa-sign-in" style="padding-right: 1em;">
+                    
+                    </icon>
+              
+                    SAVE CSS FRAMEWORKS
+                    </button>
+            </fieldset>
+            <fieldset id="js-press-js-fieldset" class="js-press-web-configuration-fieldset none-mode">
+                <legend class="js-press-web-configuration-legend" lazydev="18e1d0fb99b1">
+                    3rd Party JS Libraries
+                </legend>
+
+                <label class="js-press-config-label-title" lazydev="18e1d13e6f91" for="" accesskey="">
+                    JS Library Arrays
+                </label>
+                <div id="js-framework-list-container" class="framework-list-container">
+                   
+                </div>
+                <button id="js-press-js-add-button" style="width: 100%" class="js-press-config-save-button" lazydev="18dd06a5d031" type="button">
+                    <icon class="fa fa-plus-circle" style="padding-right: 1em;">
+                    
+                    </icon>
+              
+                    Add Library
+                    </button>
+                <button id="js-press-js-save-button" class="js-press-config-save-button" lazydev="18dd06a5d031" type="button">
+                    <icon id="icon-18dd06a5d031" class="fa fa-sign-in" style="padding-right: 1em;">
+                    
+                    </icon>
+              
+                    SAVE JS LIBRARIES
+                    </button>
+            </fieldset>
+            <fieldset id="js-press-google-font-fieldset" class="js-press-web-configuration-fieldset none-mode">
+                <legend class="js-press-web-configuration-legend" lazydev="18e1d0fb99b1">
+                    Site Fonts
+                </legend>
+                <label id="js-press-config-label-title" class="js-press-config-label-title" lazydev="18e1d13e6f91" for="" accesskey="">
+                    Google Fonts
+                </label>
+                <span class="js-press-config-span-1">separate by comma</span>
+                <textarea id="js-google-fonts" rows="15" class="js-press-config-input-desc"></textarea>
+                <button id="js-press-font-save-button" class="js-press-config-save-button" lazydev="18dd06a5d031" type="button">
+                    <icon id="icon-18dd06a5d031" class="fa fa-sign-in" style="padding-right: 1em;">
+                    
+                    </icon>
+              
+                    SAVE FONTS
+                    </button>
+            </fieldset>
+      
+            
+            </form>
+      
+            <div id="js-press-admin-config-image" class="js-press-admin-config-image" lazydev="18e1d1b42811">
+                <select id="web-config-select" class="web-config-select">
+                    <option value="js-press-web-configuration-fieldset">Web Configuration</option>
+                    <option value="js-press-web-smtp-fieldset">SMTP Configuration</option>
+                    <option value="js-press-google-font-fieldset">Fonts</option>
+                    <option value="js-press-css-fieldset">Css Framework</option>
+                    <option value="js-press-js-fieldset">Js Framework</option>
+                </select>
+                <label id="js-press-admin-config-image-label-favicon" class="js-press-admin-config-image-label-favicon" lazydev="18e1d246c601" for="" accesskey="">
+            CURRENT FAVICON
+            </label>
+      
+            <img id="js-press-admin-config-image-img-favicon" class="js-press-admin-config-image-img-favicon" lazydev="18e1d28b96f1" src="/public/logo/favicon.ico">
+            <label id="js-press-admin-config-image-label-logo" class="js-press-admin-config-image-label-logo" lazydev="18e1d24c8c01" for="" accesskey="">
+            CURRENT LOGO
+            </label>
+      
+            <img id="js-press-admin-config-image-img-logo" class="js-press-admin-config-image-img-logo" lazydev="18e1d2956bf1" src="/public/logo/Logo.png">
+            
+            </div>
+      
+            
+            </div>
+      
+            
+            </div>
+            <%- include('jsa-sidebar') %>
+            <script src="/public/function/webconfigFUNC.js"></script>
+        </section>
+    </body>
+</html>

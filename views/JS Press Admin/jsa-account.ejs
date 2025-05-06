@@ -1,0 +1,27 @@
+<script>
+    const logoutButton = document.getElementById('js-logout-container');
+if(logoutButton){
+    logoutButton.addEventListener('click', async()=>{
+        try {
+                const response = await fetch('/api/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'same-origin' // Ensure cookies are sent
+                });
+
+                if (response.ok) {
+                    // Logout successful, perform any necessary actions
+                    window.location.href ='/login'
+                    // Redirect to login page or update UI as needed
+                } else {
+                    // Handle errors
+                    console.error('Logout failed');
+                }
+            } catch (error) {
+                console.error('Error during logout:', error);
+            }
+    })
+}
+</script>

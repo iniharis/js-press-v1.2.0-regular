@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazy Dev Page Builder</title>
+  <link rel="stylesheet" href="/js-builder/pagebuilder.css">
+  <link rel="stylesheet" href="/js-builder/form.css">
+  <!-- Video JS -->
+  <link data-css-framework="true" id="videojs830" href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+  <!-- Video JS End-->
+  <script data-js-framework="true" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<!-- Main Quill library -->
+<link data-sc="true" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sceditor@3/minified/themes/default.min.css" />
+<script data-sc="true" src="https://cdn.jsdelivr.net/npm/sceditor@3/minified/sceditor.min.js"></script>
+<!-- Quill -->
+  <link data-font-awesome="true" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link data-css-framework="true" id="Bootstrap450" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
+  <!--Zip -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+  <!-- font style -->
+  <style id="fontStyles"></style>
+
+  
+</head>
+
+<body>
+
+
+<script data-sc="true" src="https://cdn.jsdelivr.net/npm/sceditor@3/minified/formats/xhtml.min.js"></script>
+<div id="container" class="animation-container-lazydev"></div>
+<div id="linkshead">  </div>
+
+<section id="slicer-fixed-loading" class="slicer-fixed-loading">
+  <div id="slicer-loading" class="slicer-loading">
+  <i class="fa-solid fa-spinner"></i>
+  </div>
+
+  <h1 id="slicer-text" class="slicer-text">
+  Preparing Content ...
+  </h1>
+
+  
+</section>
+
+
+<section id="main-controller">
+  <div id="icon-controller">
+  <i id ="LazyDevLogo" class="icons fa-brands fa-gitkraken"></i>
+  <i id ="Add-Container" class="icons2 fa-solid fa-pager"></i>
+  <i id ="Add-built-in" class="icons2 fa-solid fa-shapes"></i>
+  <i id ="Add-Div" class="icons2 fa-solid fa-layer-group"></i>
+  <i id ="Add-Element" class="none-mode icons2 fa-solid fa-code"></i>
+  <i id ="Edit-Element" class="icons2 fa-solid fa-bullseye"></i>
+  <i id ="Add-Component-Container" class="icons2 fa-regular fa-square-plus"></i>
+  <i id ="Animate-Element" class="icons2 fa-solid fa-a"></i>
+  <i id ="remove-element" class="none-mode icons2 fa-solid fa-trash"></i>
+  <i id ="export-page" class="icons2 fa-solid fa-share-from-square"></i>
+  <i id ="minimize-editor" class="icons2 fa-solid fa-minus"></i>
+  <i id ="open-navigator" class="icons2 fa-solid fa-bars"></i>
+  <i id ="open-responsive" class="icons2 fa-solid fa-mobile-screen"></i>
+  <i id ="Page-builder-setting" class="icons2 fa-solid fa-screwdriver-wrench"></i>
+  </div>
+  <div id="menu-controller">
+    <div id="head-menu-controller">
+      <H1 id="head-menu-title">Head Menu Title</H1>
+      <button id="close-menu">Close</button>
+    </div>
+    <div id="menu-tab">
+      <div>Tab 1</div>
+      <div>Tab 2</div>
+      <div>Tab 3</div>
+    </div>
+    <div id="content-menu-controller"></div>
+  </div>
+</section>
+
+<section id="Project-Setting">
+  
+<form id="ProjectSetting" data-id="lazydev">
+
+<fieldset data-id="formFieldset" id="formfieldsetProjectSetting">
+
+<legend data-id="formlegend" id="formmakerlegendProjectSetting">
+Project Setting</legend>
+
+
+  
+  <div id="ProjectNameInput" inputid="inputid1" style="width: 98% !important;">
+<label id="ProjectNameInputlabel" for="Project Name" labelid="label1" style="width: 100%;">
+Project Name</label>
+<input fieldid="field1" type="text" id="ProjectNameInputinput" name="Project Name" style="width: 100%;">
+</div>
+<!-- <div id="FilePath" inputid="inputid2" style="width: 98% !important;">
+<label id="FilePathlabel" for="File Path" labelid="label2" style="width: 100%;">
+File Path <span style="color: rgba(0, 255, 255, 0.982);">(Verify the details accurately to avoid any potential errors in the uploaded image)</span></label>
+<input type="text" id="FilePathinput" name="File Path" placeholder="C:\xampp\htdocs\MyProject" style="width: 100%;">
+
+</div> -->
+<div id="Page-Setting" style="width: 98% !important;">
+  <label style="width: 100%;">Page Setting</label>
+  <select id="select-page-setting" style="width: 100%;">
+  <option value="2"> 1</option>
+  <option value="1"> 1</option>
+  </select>
+</div>
+
+</div>
+<div id="ProjectCSSTarget" inputid="inputid4" style="width: 100%;">
+<label id="ProjectCSSTargetlabel" for="NewFIeld4" labelid="label4" style="width: 100%;">
+Project CSS Target</label>
+<select fieldid="field4" id="ProjectCSSTargetinput" name="NewFIeld4" style="width: 100%;">
+<option value="CSS ID">CSS ID</option>
+<option value="LazyDev">LazyDev</option>
+<option value="Main CSS Class">Main CSS Class</option>
+</select>
+</div>
+<div data-id="buttondivz" id="SubmitDivProjectSetting">
+
+    <button data-id="buttoninputzzz" id="SubmitButtonProjectSetting" type="submit">
+Save</button>
+
+  </div>
+
+</fieldset>
+
+</form>
+</section>
+
+<style id="bodyStyle">
+  body {
+    margin :0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #e0e0e0;
+    overflow-x: hidden;
+    }
+  
+</style>
+
+<style id="Project-Custom-CSS-Style">
+
+</style>
+<script id="gsapBody" data-custom-js=""></script>
+
+<script id="bodyScript"></script>
+<!-- <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script> -->
+<!-- Tippy.js (versi 6) dari cdnjs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.1/tippy-bundle.umd.min.js"></script>
+<script src="/js-builder/main.js" type="module"></script>
+<script src="/js-builder/Animation.js" type="module"></script>
+<script src="/js-builder/EditBody.js" type="module"></script>
+<script src="/js-builder/newMainContainer.js" type="module"></script>
+<script src="/js-builder/newChildContainer.js" type="module"></script>
+<script src="/js-builder/dataatribut.js" type="module"></script>
+<script src="/js-builder/formEditElements.js" type="module"></script>
+<script src="/js-builder/formEditConstructor.js" type="module"></script>
+<script src="/js-builder/formEditInputValue.js" type="module"></script>
+<script src="/js-builder/selector.js" type="module"></script>
+<script src="/js-builder/duplicate.js" type="module"></script>
+<script src="/js-builder/DeleteElement.js" type="module"></script>
+<script src="/js-builder/newElement.js" type="module"></script>
+<script src="/js-builder/navigator.js" type="module"></script>
+<script src="/js-builder/animateElement.js" type="module"></script>
+<script src="/js-builder/animateElementGsap.js" type="module"></script>
+<script src="/js-builder/exportcontent.js" type="module"></script>
+<script src="/js-builder/importcontent.js" type="module"></script>
+<script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+</body>
+</html>

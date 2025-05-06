@@ -1,0 +1,627 @@
+/* loading */
+  
+.slicer-fixed-loading {
+
+    display: flex;
+    position: fixed;
+    z-index: 99990;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: rgba(18, 38, 38, 1);
+    font-family: Lato;
+    padding: 5px 5px 5px 5px;
+    transition: 0.2s;
+   }
+   
+   .slicer-loading {
+    animation: rotate360 2s infinite linear; 
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: #e6e6e6;
+    font-size: 5em;
+    padding: 1% 1% 1% 1%;
+   }
+   @keyframes rotate360 {
+    from {
+        transform: rotate(0deg); /* Mulai rotasi dari sudut 0 derajat */
+    }
+    to {
+        transform: rotate(360deg); /* Rotasi hingga 360 derajat */
+    }
+  }
+   
+   
+   .slicer-text {
+    animation: scaleAndFade 5s infinite;
+    max-width: 100%;
+    color: #f0f0f0;
+    font-size: 5em;
+    font-weight: 600;
+    padding: 1% 1% 1% 1%;
+   }
+  
+   @keyframes scaleAndFade {
+    0% {
+        transform: scale(1); /* Ukuran awal: 100% */
+        opacity: 1; /* Opasitas awal: 1 (tidak transparan) */
+    }
+    50% {
+        transform: scale(1.3); /* Ukuran tengah: 130% */
+        opacity: 0.7; /* Opasitas tengah: 0.7 */
+    }
+    100% {
+        transform: scale(1); /* Kembali ke ukuran awal: 100% */
+        opacity: 1; /* Kembali ke opasitas awal: 1 */
+    }
+  }
+  
+  .slicer-prepare-end {
+    animation: slideOut 1s ease 0.5s 1 normal forwards;
+  }
+  
+  @keyframes slideOut {
+      0% {
+          opacity: 1;
+          transform: scale(1);
+      }
+  
+      100% {
+          opacity: 0;
+          transform: scale(1.4);
+      }
+  }
+  
+/*loading End */
+
+.slice-window-container {
+    min-height: 92vh;
+    margin: 0vh 0vh 7vh 0vh;
+   }
+
+.lazydev-selected-hover {
+    cursor: pointer;
+    opacity: 0.7;
+    outline: 10px solid rgb(153, 41, 218);
+    outline-offset: -10px;
+    transition: all 0.5s;
+  }
+
+  .slicer-menu-container {
+
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    top:93%;
+    width: 100vw;
+    min-height: 8vh;
+    overflow-x: hidden;
+    background-color: #212121;
+    color: #e6e6e6;
+    padding: 7px 33px 10px 33px;
+    transition: 0.2s;
+   }
+   
+   
+   
+   .slicer-save-component {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: flex-start;
+    width: 18em;
+    height: 5vh;
+    background-color: rgba(67, 163, 163, 0);
+    outline-style: solid;
+    outline-width: 0.05em;
+    outline-color: rgba(181, 181, 181, 0.7);
+    border-radius: 050px 050px 050px 050px;
+    transition: 0.5s;
+    cursor: pointer;
+   }
+   
+   
+   
+   .slicer-save-component:hover {
+   
+    background-color: rgba(0, 97, 97, 0.84);
+    outline-style: solid;
+    outline-width: 0.05em;
+    outline-color: rgba(1, 69, 111, 1);
+    color: #f0f0f0;
+   }
+   
+   
+   .slice-and-save-button {
+   
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    background: none;
+    padding: 6% 1% 1% 1%;
+   }
+   
+   
+   
+   .slicer-options {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: flex-start;
+    order: 1;
+    width: 4em;
+    height: 5vh;
+    background-color: rgba(67, 163, 163, 0);
+    outline-style: solid;
+    outline-width: 0.05em;
+    outline-color: rgba(181, 181, 181, 0.7);
+    border-radius: 03px 03px 03px 03px;
+    padding: 1% 1% 1% 1%;
+    transition: 0.5s;
+    cursor: pointer;
+   }
+   
+   
+   
+   .slicer-options:hover {
+   
+    background-color: rgba(0, 97, 97, 0.84);
+    outline-style: solid;
+    outline-width: 0.05em;
+    outline-color: rgba(1, 69, 111, 1);
+    color: #f0f0f0;
+   }
+   
+   
+   .slicer-options-button {
+   
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 5vh;
+    background: none;
+    padding: 0% 1% 1% 1%;
+   }
+
+/* SLicer Array */
+
+.enterence-animation {
+    animation: fade-in-class 0.5s ease-in-out backwards;
+  }
+  
+  @keyframes fade-in-class {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .enterence2-animation {
+    animation: fade-in-class2 0.2s ease-in-out 0.2s backwards;
+  }
+  
+  @keyframes fade-in-class2 {
+    from {
+      opacity: 0;
+      transform: translateY(50px); /* Mengubah nilai transform untuk efek yang lebih baik */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .exit-animation {
+    animation: fade-out-class 0.3s ease-in-out forwards;
+  }
+  
+  
+  @keyframes fade-out-class {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .exit-animation2 {
+    animation: fade-out-class2 0.3s ease-in-out forwards;
+  }
+  
+  @keyframes fade-out-class2 {
+    from {
+      opacity: 1;
+      transform: translateY(0); /* Mengubah nilai transform untuk efek yang lebih baik */
+    }
+    to {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  }
+  
+  .slicer-array-wrapper {
+  
+    display: flex;
+    z-index: 99992;
+    position:fixed;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: flex-end;
+    align-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.08);
+    padding: 0em 0.2em 4.8em 0em;
+    transition: 0.2s;
+   }
+   
+   
+   
+   .slicer-list-container {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: flex-start;
+    width: 25em;
+    height: 75vh;
+    background-color: #303030;
+    padding: 1% 1% 1% 1%;
+   }
+   
+   
+   
+   .sliced-items-head {
+   
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(33, 33, 33, 0.77);
+    padding: 2% 1% 1% 0%;
+    transition: 0.3s;
+   }
+   
+   
+   
+   .sliced-items-head:hover {
+   
+    color: #2d0101;
+   }
+   
+   
+   .slicer-h3-sliced {
+   
+    display: inline-flex;
+    width: 70%;
+    text-align: left;
+    color: #e6e6e6;
+    font-size: 1.2em;
+    padding: 1% 1% 1% 1%;
+   }
+   
+   
+   
+   .close-icon-container {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 10vh;
+    background-color: rgba(202, 68, 68, 1);
+    font-size: 2rem;
+    padding: 1% 1% 1% 1%;
+    transition: 0.5s;
+    cursor: pointer;
+   }
+   
+   
+   
+   .close-icon-container:hover {
+   
+    background-color: rgba(242, 49, 49, 0.5);
+    color: #c4c4c4;
+   }
+   
+   
+   .sliced-items-body {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+    overflow-y: auto;
+    background-color: rgba(38, 38, 38, 0.93);
+    padding: 1% 1% 1% 1%;
+   }
+   
+   
+   
+   .slicer-arrays-container {
+   
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: flex-start;
+    width: 100%;
+    height: 3em;
+    background-color: rgba(40, 88, 88, 0.45);
+    padding: 1% 1% 1% 1%;
+   }
+   
+   
+   
+   .lazyclass208 {
+   
+    display: inline;
+    width: 70%;
+    color: #78d3a9;
+    font-size: 1em;
+    padding: 1% 1% 1% 1%;
+   }
+   
+   
+   
+   .slicer-wrapper-11 {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-grow: 1;
+    width: 30%;
+    background: none;
+    padding: 1% 1% 1% 1%;
+   }
+   
+   
+   
+   .slicer-button-view {
+   
+    display: block;
+    max-width: 100%;
+    height: 20px;
+    background-color: rgba(112, 189, 163, 0.6);
+    border-radius: 015px 015px 015px 015px;
+    color: #292929;
+    padding: 0rem 1rem 1.5rem 1rem;
+    transition: 0.5s;
+    cursor: pointer;
+   }
+   
+   
+   
+   .slicer-button-view:hover {
+   
+    background-color: rgba(81, 205, 157, 0.5);
+    color: #e6e6e6;
+   }
+   
+   
+   .lazyclass4214 {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-grow: 1;
+    width: 30%;
+    background: none;
+    padding: 1% 1% 1% 1%;
+   }
+   
+   
+   
+   .slicer-button-delete {
+   
+    display: block;
+    max-width: 100%;
+    height: 20px;
+    background-color: rgba(227, 69, 69, 1);
+    border-radius: 015px 015px 015px 015px;
+    color: #2c2b2b;
+    padding: 0rem 1rem 1.5rem 1rem;
+    transition: 0.5s;
+    cursor: pointer;
+   }
+   
+   
+   
+   .slicer-button-delete:hover {
+   
+    background-color: rgba(255, 41, 41, 0.89);
+    color: #e6e6e6;
+   }
+   
+  /* Slicer Array End*/
+/* Popup Drag */
+
+#drag-container{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 30rem;
+    max-height: 50vh;
+    overflow-y: auto;
+    border: 1px solid #0e0e0e;
+    z-index: 9000;
+  }
+  
+  .drags{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-grow: 1 !important;
+    width: 100% !important;
+    height: 4vh;
+    background-color: #020202;
+    color: rgb(0, 255, 255);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: all 0.3s;
+  }
+  
+  .drags:hover{
+    border: 4px solid rgb(0, 255, 255);
+    cursor: pointer;
+  }
+  
+  .drags i {
+    flex-grow: 1;
+    margin-bottom: 4%;
+    margin-left: 3.5%;
+    width: 3%;
+  }
+  
+  .drags p {
+    flex-grow: 6;
+    text-align: center;
+  }
+/* Popup Drag End */
+
+
+/* Save Container */
+
+.slice-save-container {
+
+  display: flex;
+  position: fixed;
+  z-index: 999993;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  background: none;
+  padding: 5px 5px 5px 5px;
+  transition: 0.2s;
+ }
+ 
+ 
+ 
+ .slice-save-wrapper {
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 10em;
+  background-color: rgba(23, 43, 40, 1);
+  box-shadow:  0.38em 0.58em 0.88em -0.24em rgba(43, 43, 43, 0.5);
+  padding: 1% 1% 1% 1%;
+  animation: scaleAnimationSlicing 0.3s ease backwards;;
+ }
+ 
+ 
+ @keyframes scaleAnimationSlicing {
+   0% {
+     transform: scaleX(0);
+   }
+   100% {
+     transform: scaleX(1);
+   }
+ }
+ .lazyclass633 {
+ 
+  max-width: 100%;
+  color: #00ffff;
+  padding: 1% 1% 1% 1%;
+ }
+ 
+ 
+ 
+ .slicing-save-button {
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 255, 255, 0.842);
+  font-weight: 700;
+  padding: 1% 1% 1% 1%;
+  transition: 0.5s;
+  cursor: pointer;
+ }
+ 
+ 
+ 
+ .slicing-save-button:hover {
+ 
+  background-color: #212121;
+  color: #00ffff;
+ }
+ 
+ #slice-saving-icon {
+ font-size: 2rem;
+   animation: spin 2s linear infinite;
+ }
+ 
+ @keyframes spin {
+   0% {
+     transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+ 
+/* Save Container End*/
+/* Builder Options */
+.label-body-option{
+  margin-top: 2%;
+  color:#c4c4c4;
+}
+.none-mode{
+  display: none !important;
+}
+/* Builder Options End */

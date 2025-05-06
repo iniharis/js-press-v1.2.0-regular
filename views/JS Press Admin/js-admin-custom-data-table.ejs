@@ -1,0 +1,2508 @@
+
+<html>
+    <head>
+        <title>Create New Custom Data</title>
+        <%- include('jsa-head') %>
+    </head>
+    <body>
+        <style>
+      
+            .js-custom-data-table-form {
+            
+             display: flex;
+             width: 80%;
+             flex-basis: 80%;
+             min-height: 100px;
+             gap: 1em;
+             flex-grow: 1;
+             flex-wrap: wrap;
+             justify-content: flex-start;
+             align-items: flex-start;
+             align-content: flex-start;
+             flex-direction: row;
+             overflow-x: hidden;
+             background-color: rgba(201, 201, 201, 1);
+             padding-top: 5px;
+             padding-right: 5px;
+             padding-bottom: 5px;
+             padding-left: 5px;
+             transition: 0.2s;
+             box-sizing: border-box;
+            }
+            
+            .custom_fieldset_option {
+
+display: flex;
+width: 100%;
+gap: 1em;
+flex-grow: 1;
+justify-content: flex-end;
+flex-direction: row;
+margin-top: 5px;
+padding-top: 1px;
+padding-right: 1px;
+padding-bottom: 1px;
+padding-left: 1px;
+box-sizing: border-box;
+}
+
+
+
+.option-go-up {
+
+background-color: rgba(3, 64, 69, 0.84);
+padding-top: 2px;
+padding-right: 2px;
+padding-bottom: 2px;
+padding-left: 2px;
+transition: 0.5s;
+cursor: pointer;
+color: #00ffff;
+font-size: 20px !important;
+}
+
+
+
+.option-go-up:hover {
+
+background-color: #00ffff;
+color: #262626;
+}
+
+
+.option-go-down {
+
+background-color: rgba(3, 64, 69, 0.84);
+padding-top: 2px;
+padding-right: 2px;
+padding-bottom: 2px;
+padding-left: 2px;
+transition: 0.5s;
+cursor: pointer;
+color: #00ffff;
+font-size: 20px !important;
+}
+
+
+
+.option-go-down:hover {
+
+background-color: #00ffff;
+color: #262626;
+}
+
+
+.option-delete {
+
+background-color: rgba(69, 3, 3, 0.84);
+padding-top: 4px;
+padding-right: 4px;
+padding-bottom: 4px;
+padding-left: 4px;
+transition: 0.5s;
+cursor: pointer;
+color: #b8b7b7;
+font-size: 20px !important;
+}
+
+
+
+.option-delete:hover {
+
+background-color: rgba(255, 0, 0, 0.84);
+color: #ffffff;
+}
+
+.save-custom-table {
+
+width: 100%;
+background-color: rgba(0, 148, 148, 0.84);
+margin-top: 6px;
+padding-top: 8px;
+padding-right: 20px;
+padding-bottom: 8px;
+padding-left: 20px;
+transition: 0.3s;
+cursor: pointer;
+outline-style: none;
+outline-width: 0.25em;
+outline-color: rgba(0, 0, 0, 1);
+outline-style: none;
+border-style: solid;
+border-top-width: 2px;
+border-right-width: 2px;
+border-bottom-width: 2px;
+border-left-width: 2px;
+border-color: rgba(110, 110, 110, 0);
+color: #ffffff;
+}
+
+
+
+.save-custom-table:hover {
+
+background-color: rgba(0, 77, 75, 1);
+border-top-width: 2px;
+border-right-width: 2px;
+border-bottom-width: 2px;
+border-left-width: 2px;
+border-color: rgba(0, 128, 119, 1);
+color: #00ffff;
+}
+
+
+.save-custom-table:active {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+
+@media screen and (max-width: 900px) {
+.save-custom-table {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+}
+@media screen and (max-width: 600px) {
+.save-custom-table {
+
+border-color: rgba(NaN, NaN, NaN, 1);
+}
+
+}
+            
+            
+            .js-custom-data-table-fieldset {
+            
+             display: flex;
+             min-height: 30vh;
+             flex-grow: 1;
+             justify-content: flex-start;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-right: 3px;
+             margin-bottom: 10px;
+             margin-left: 3px;
+             padding-top: 1%;
+             padding-right: 2%;
+             padding-bottom: 1%;
+             padding-left: 2%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(148, 148, 148, 1);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .js-custom-data-table-fieldset:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .js-custom-data-table-fieldset:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .js-custom-data-table-fieldset {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .js-custom-data-table-fieldset {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .LEGEND-18f18e49d821 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .LABEL-18f18e6d92d1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .js-ct-name {
+            
+             width: 100%;
+             margin-left: 10px;
+            }
+            
+            
+            
+            .lazyclass18f18e743c41 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .js-ct-type {
+            
+             min-width: 40%;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             cursor: pointer;
+            }
+            
+            
+            
+            .js-fieldset-div {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             justify-content: center;
+             align-items: center;
+             flex-direction: column;
+             margin-top: 6px;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .H1-18f18f692331 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             font-weight: 600;
+             font-size: 20px;
+            }
+            
+            
+            
+            .lazyclass18f18f6bd421 {
+            
+             min-width: 40%;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             cursor: pointer;
+             font-size: 18px;
+            }
+            
+            
+            
+            .BUTTON-18f18f703b91 {
+            
+             background-color: rgba(56, 56, 56, 0.5);
+             margin-top: 6px;
+             padding-top: 8px;
+             padding-right: 20px;
+             padding-bottom: 8px;
+             padding-left: 20px;
+             transition: 0.3s;
+             cursor: pointer;
+             outline-style: none;
+             outline-width: 0.25em;
+             outline-color: rgba(0, 0, 0, 1);
+             outline-style: none;
+             border-style: solid;
+             border-top-width: 2px;
+             border-right-width: 2px;
+             border-bottom-width: 2px;
+             border-left-width: 2px;
+             border-color: rgba(110, 110, 110, 0.83);
+             color: #ffffff;
+            }
+            
+            
+            
+            .BUTTON-18f18f703b91:hover {
+            
+             background-color: rgba(0, 0, 0, 0);
+             border-color: rgba(158, 158, 158, 1);
+             color: #595959;
+            }
+            
+            
+            .BUTTON-18f18f703b91:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .BUTTON-18f18f703b91 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .BUTTON-18f18f703b91 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .fieldset-18f19073eb41 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(143, 143, 143, 0.85);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .fieldset-18f19073eb41:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .fieldset-18f19073eb41:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .fieldset-18f19073eb41 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .fieldset-18f19073eb41 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .LEGEND-18f1907e6ca1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f19038aea1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1903c0721 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1905d43a1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1906340a1 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f190488211 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1904a6891 {
+            
+             min-width: 40%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             cursor: pointer;
+            }
+            
+            
+            
+            .lazyclass18f191c08a11 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f191c14a11 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1913459d1 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(143, 143, 143, 0.85);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f1913459d1:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .lazyclass18f1913459d1:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .lazyclass18f1913459d1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .lazyclass18f1913459d1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .lazyclass18f191345841 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f191345881 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1913458c1 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f191c6e011 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f191cb8711 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f191345901 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f191345941 {
+            
+             min-width: 40%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             cursor: pointer;
+            }
+            
+            
+            
+            .lazyclass18f191345971 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .INPUT-18f1913d81a1 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1914ece11 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1914f5911 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1914529a1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f191461091 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1917ddd11 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(143, 143, 143, 0.85);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f1917ddd11:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .lazyclass18f1917ddd11:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .lazyclass18f1917ddd11 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .lazyclass18f1917ddd11 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .lazyclass18f1917ddba1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1917ddbd1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1917ddc11 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f191d61191 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f191d6a391 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1917ddc41 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1917ddc71 {
+            
+             min-width: 40%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             cursor: pointer;
+            }
+            
+            
+            
+            .lazyclass18f1917ddcb1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .INPUT-18f191840b91 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f191e196a1 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(143, 143, 143, 0.85);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f191e196a1:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .lazyclass18f191e196a1:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .lazyclass18f191e196a1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .lazyclass18f191e196a1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .lazyclass18f191e194c1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f191e19501 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f191e19531 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f191e19561 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f191e195a1 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .DIV-18f191edb121 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 50px;
+             gap: 1em;
+             flex-grow: 1;
+             justify-content: center;
+             align-items: center;
+             flex-direction: row;
+             background-color: rgba(212, 212, 212, 0.32);
+             margin-top: 3px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .DIV-18f1920822f1 {
+            
+             display: flex;
+             min-height: 30px;
+             flex-grow: 1;
+             justify-content: center;
+             align-items: center;
+             flex-direction: column;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f1922fb811 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f19233ee11 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1922ddff1 {
+            
+             display: flex;
+             min-height: 30px;
+             flex-grow: 1;
+             justify-content: center;
+             align-items: center;
+             flex-direction: column;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f192394491 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1923ace91 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .DIV-18f1925ddb21 {
+            
+             display: flex;
+             width: 100%;
+             flex-grow: 1;
+             justify-content: center;
+             align-items: center;
+             flex-direction: column;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f1924bcdb1 {
+            
+             background-color: rgba(56, 56, 56, 0.5);
+             margin-top: 6px;
+             padding-top: 8px;
+             padding-right: 20px;
+             padding-bottom: 8px;
+             padding-left: 20px;
+             transition: 0.3s;
+             cursor: pointer;
+             outline-style: none;
+             outline-width: 0.25em;
+             outline-color: rgba(0, 0, 0, 1);
+             outline-style: none;
+             border-style: solid;
+             border-top-width: 2px;
+             border-right-width: 2px;
+             border-bottom-width: 2px;
+             border-left-width: 2px;
+             border-color: rgba(110, 110, 110, 0.83);
+             color: #ffffff;
+            }
+            
+            
+            
+            .lazyclass18f1924bcdb1:hover {
+            
+             background-color: rgba(0, 0, 0, 0);
+             border-color: rgba(158, 158, 158, 1);
+             color: #595959;
+            }
+            
+            
+            .lazyclass18f1924bcdb1:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .lazyclass18f1924bcdb1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .lazyclass18f1924bcdb1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .lazyclass18f1927ac6c1 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(143, 143, 143, 0.85);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f1927ac6c1:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .lazyclass18f1927ac6c1:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .lazyclass18f1927ac6c1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .lazyclass18f1927ac6c1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .lazyclass18f1927ac4c1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1927ac511 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1927ac541 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1927ac581 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1927ac5b1 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1927ac5e1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1927ac621 {
+            
+             min-width: 40%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             cursor: pointer;
+            }
+            
+            
+            
+            .lazyclass18f1927ac661 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1927ac691 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f192ecbdb1 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(143, 143, 143, 0.85);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f192ecbdb1:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .lazyclass18f192ecbdb1:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .lazyclass18f192ecbdb1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .lazyclass18f192ecbdb1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .lazyclass18f192ecbbb1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f192ecbbf1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f192ecbc21 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f192ecbc51 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f192ecbc91 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f192f7f541 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(143, 143, 143, 0.85);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f192f7f541:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .lazyclass18f192f7f541:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .lazyclass18f192f7f541 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .lazyclass18f192f7f541 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .lazyclass18f192f7f3c1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f192f7f401 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f192f7f431 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f192f7f461 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f192f7f4a1 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f192f7f4d1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f192f7f511 {
+            
+             min-width: 40%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             cursor: pointer;
+            }
+            
+            
+            
+            .lazyclass18f1930b5ab1 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(143, 143, 143, 0.85);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f1930b5ab1:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .lazyclass18f1930b5ab1:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .lazyclass18f1930b5ab1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .lazyclass18f1930b5ab1 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .lazyclass18f1930b58b1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1930b58f1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1930b5921 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1930b5961 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1930b59a1 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f1930b59d1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f1930b5a11 {
+            
+             min-width: 40%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             cursor: pointer;
+            }
+            
+            
+            
+            .lazyclass18f1930b5a41 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .TEXTAREA-18f1931c6991 {
+            
+             width: 100%;
+             height: 100px;
+             background-color: rgba(255, 255, 255, 0.5) !important;
+             color: #000000 !important;
+             font-weight: 500;
+             font-size: 12px !important;
+            }
+            
+            
+            
+            .lazyclass18f193501c71 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(143, 143, 143, 0.85);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f193501c71:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .lazyclass18f193501c71:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .lazyclass18f193501c71 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .lazyclass18f193501c71 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .lazyclass18f193501a61 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f193501aa1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f193501ae1 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f193501b21 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f193501b51 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f193501b91 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f193501bc1 {
+            
+             min-width: 40%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             cursor: pointer;
+            }
+            
+            
+            
+            .lazyclass18f193501c01 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .INPUT-18f1935a26a1 {
+            
+             width: 40%;
+            }
+            
+            
+            
+            .lazyclass18f193700e41 {
+            
+             display: flex;
+             width: 100%;
+             min-height: 30px;
+             gap: 0.1em;
+             flex-grow: 1;
+             align-items: flex-start;
+             flex-direction: column;
+             margin-left: 10px;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             border-style: solid;
+             border-top-width: 1px;
+             border-right-width: 1px;
+             border-bottom-width: 1px;
+             border-left-width: 1px;
+             border-color: rgba(143, 143, 143, 0.85);
+             box-sizing: border-box;
+            }
+            
+            
+            
+            .lazyclass18f193700e41:hover {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            .lazyclass18f193700e41:active {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            
+            @media screen and (max-width: 900px) {
+            .lazyclass18f193700e41 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            @media screen and (max-width: 600px) {
+            .lazyclass18f193700e41 {
+            
+             border-color: rgba(NaN, NaN, NaN, 1);
+            }
+            
+            }
+            .lazyclass18f193700c41 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f193700c81 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f193700cb1 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f193700cf1 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f193700d21 {
+            
+             width: 100%;
+            }
+            
+            
+            
+            .lazyclass18f193700d61 {
+            
+             max-width: 100%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+            }
+            
+            
+            
+            .lazyclass18f193700da1 {
+            
+             min-width: 40%;
+             padding-top: 1%;
+             padding-right: 1%;
+             padding-bottom: 1%;
+             padding-left: 1%;
+             cursor: pointer;
+            }
+            
+            
+            
+        </style>
+        <section id="js-press-dashboard-container" class="js-press-dashboard-container" lazydev="18e0835fb461">
+            <form id="js-custom-data-table-form" class="js-custom-data-table-form">
+                <fieldset id="js-custom-data-table-fieldset" class="js-custom-data-table-fieldset">
+                <legend id="custom_table_legend" class="LEGEND-18f18e49d821" lazydev="18f18e49d821">
+                New Custom Table
+                </legend>
+          
+                <label id="label-18f18e6d92d1" class="LABEL-18f18e6d92d1" lazydev="18f18e6d92d1" for="" accesskey="">
+                Custom Table Name : 
+                </label>
+          
+                <input type="text" id="js-ct-name" class="js-ct-name" lazydev="18f18e7a76c1">
+                <label id="lazyid18f18e743c41" class="lazyclass18f18e743c41" lazydev="18f18e743c41" for="" accesskey="">
+                Custom Table Type : 
+                </label>
+          
+                <select id="js-ct-type" class="js-ct-type" lazydev="18f18e8b9ec1" selectoption="{custom_post,Custom Post,selected},{Data_only,Data Only}">
+                <option value="custom_post">
+                Custom Post
+                </option>
+          
+                <option value="Data_only">
+                Data Only
+                </option>
+          
+                
+                </select>
+          
+                <div id="js-fieldset-div" class="js-fieldset-div" lazydev="18f18f5c1e31">
+                <h1 id="h1-18f18f692331" class="H1-18f18f692331" lazydev="18f18f692331">
+                
+              Fieldset Select
+          
+                </h1>
+          
+                <select id="select-fieldsets" class="lazyclass18f18f6bd421" lazydev="18f18f6bd421" selectoption="{Text,Input Text},{Number,Input Number},{Email,Input Email},{Select,Input Select},{Password,Input Password},{Checkbox,Input Checkbox},{Media,Input Media},{Textarea,Input Textarea},{Color,Input Color},{WYSIWYG,Input WYSIWYG},
+          ">
+                <option value="Text">
+                Input Text
+                </option>
+          
+                <option value="Number">
+                Input Number
+                </option>
+          
+                <option value="Email">
+                Input Email
+                </option>
+          
+                <option value="Select">
+                Input Select
+                </option>
+          
+                <option value="Password">
+                Input Password
+                </option>
+          
+                <option value="Checkbox">
+                Input Checkbox
+                </option>
+          
+                <option value="Media">
+                Input Media
+                </option>
+          
+                <option value="Textarea">
+                Input Textarea
+                </option>
+          
+                <option value="Color">
+                Input Color
+                </option>
+          
+                <option value="WYSIWYG">
+                Input WYSIWYG
+                </option>
+          
+                
+                </select>
+          
+                <button id="add-new-fieldset" class="BUTTON-18f18f703b91" lazydev="18f18f703b91" type="button">
+                <icon id="icon-18f18f703b91" class="fa fa-plus-square" style="padding-right: 1em;">
+                
+                </icon>
+          
+                ADD FIELDSET
+                </button>
+          
+                
+                </div>
+
+                <button id="save-custom-table" class="save-custom-table" lazydev="18f197b052f1" type="button">
+                    <icon id="icon-18f197b052f1" class="fa fa-check-circle" style="padding-right: 1em;">
+                    
+                    </icon>
+              
+                    SAVE CUSTOM TABLE
+                </button>
+          
+                <!-- <fieldset class="fieldset-18f19073eb41">
+                <legend id="legend-18f1907e6ca1" class="LEGEND-18f1907e6ca1" lazydev="18f1907e6ca1">
+                Fieldset_text Fieldsets(text)
+                </legend>
+                <div id="custom_fieldset_option" class="custom_fieldset_option" lazydev="18f1972bd4f1">
+                    <i id="option-go-up" class="option-go-up  fa fa-chevron-up" lazydev="18f197386311">
+                    
+                    </i>
+              
+                    <i id="option-go-down" class="option-go-down fa fa-chevron-down" lazydev="18f1977a3b71">
+                    
+                    </i>
+              
+                    <i id="option-delete" class="option-delete  fa-solid fa-xmark" lazydev="18f1977adbe1">
+                    
+                    </i>
+              
+                    
+                </div>
+                <label id="lazyid18f19038aea1" class="lazyclass18f19038aea1" lazydev="18f19038aea1" for="" accesskey="">
+                Fieldset name : 
+                </label>
+          
+                <input type="text" id="lazyid18f1903c0721" class="lazyclass18f1903c0721" lazydev="18f1903c0721">
+                <label id="lazyid18f1905d43a1" class="lazyclass18f1905d43a1" lazydev="18f1905d43a1" for="" accesskey="">
+                Fieldset label : 
+                </label>
+          
+                <input type="text" id="lazyid18f1906340a1" class="lazyclass18f1906340a1" lazydev="18f1906340a1">
+                <label id="lazyid18f190488211" class="lazyclass18f190488211" lazydev="18f190488211" for="" accesskey="">
+                Mandatory : 
+                </label>
+          
+                <select id="lazyid18f1904a6891" class="lazyclass18f1904a6891" lazydev="18f1904a6891" selectoption="{true,TRUE,selected},{false,FALSE}">
+                <option value="true">
+                TRUE
+                </option>
+          
+                <option value="false">
+                FALSE
+                </option>
+          
+                
+                </select>
+          
+                <label id="lazyid18f191c08a11" class="lazyclass18f191c08a11" lazydev="18f191c08a11" for="" accesskey="">
+                Default value : 
+                </label>
+          
+                <input type="text" id="lazyid18f191c14a11" class="lazyclass18f191c14a11" lazydev="18f191c14a11">
+                
+                </fieldset> -->
+          
+                <!-- <fieldset id="lazyid18f1913459d1" class="lazyclass18f1913459d1" lazydev="18f1913459d1">
+                <legend id="lazyid18f191345841" class="lazyclass18f191345841" lazydev="18f191345841">
+                Fieldset_number Fieldsets(number)
+                </legend>
+
+                <div id="custom_fieldset_option" class="custom_fieldset_option" lazydev="18f1972bd4f1">
+                    <i id="option-go-up" class="option-go-up  fa fa-chevron-up" lazydev="18f197386311">
+                    
+                    </i>
+              
+                    <i id="option-go-down" class="option-go-down fa fa-chevron-down" lazydev="18f1977a3b71">
+                    
+                    </i>
+              
+                    <i id="option-delete" class="option-delete  fa-solid fa-xmark" lazydev="18f1977adbe1">
+                    
+                    </i>
+              
+                    
+                </div>
+          
+                <label id="lazyid18f191345881" class="lazyclass18f191345881" lazydev="18f191345881" for="" accesskey="">
+                Fieldset name : 
+                </label>
+          
+                <input type="text" id="lazyid18f1913458c1" class="lazyclass18f1913458c1" lazydev="18f1913458c1">
+                <label id="lazyid18f191c6e011" class="lazyclass18f191c6e011" lazydev="18f191c6e011" for="" accesskey="">
+                Fieldset label : 
+                </label>
+          
+                <input type="text" id="lazyid18f191cb8711" class="lazyclass18f191cb8711" lazydev="18f191cb8711">
+                <label id="lazyid18f191345901" class="lazyclass18f191345901" lazydev="18f191345901" for="" accesskey="">
+                Mandatory : 
+                </label>
+          
+                <select id="lazyid18f191345941" class="lazyclass18f191345941" lazydev="18f191345941" selectoption="{true,TRUE,selected},{false,FALSE}">
+                <option value="true">
+                TRUE
+                </option>
+          
+                <option value="false">
+                FALSE
+                </option>
+          
+                
+                </select>
+          
+                <label id="lazyid18f191345971" class="lazyclass18f191345971" lazydev="18f191345971" for="" accesskey="">
+                Minimum value : 
+                </label>
+          
+                <input type="Number" id="input-18f1913d81a1" class="INPUT-18f1913d81a1" lazydev="18f1913d81a1">
+                <label id="lazyid18f1914ece11" class="lazyclass18f1914ece11" lazydev="18f1914ece11" for="" accesskey="">
+                Maximum value : 
+                </label>
+          
+                <input type="Number" id="lazyid18f1914f5911" class="lazyclass18f1914f5911" lazydev="18f1914f5911">
+                <label id="lazyid18f1914529a1" class="lazyclass18f1914529a1" lazydev="18f1914529a1" for="" accesskey="">
+                Default value : 
+                </label>
+          
+                <input type="Number" id="lazyid18f191461091" class="lazyclass18f191461091" lazydev="18f191461091">
+                
+                </fieldset> -->
+          
+                <!-- <fieldset id="lazyid18f1917ddd11" class="lazyclass18f1917ddd11" lazydev="18f1917ddd11">
+                <legend id="lazyid18f1917ddba1" class="lazyclass18f1917ddba1" lazydev="18f1917ddba1">
+                Fieldset_text Fieldsets(email)
+                </legend>
+
+                <div id="custom_fieldset_option" class="custom_fieldset_option" lazydev="18f1972bd4f1">
+                    <i id="option-go-up" class="option-go-up  fa fa-chevron-up" lazydev="18f197386311">
+                    
+                    </i>
+              
+                    <i id="option-go-down" class="option-go-down fa fa-chevron-down" lazydev="18f1977a3b71">
+                    
+                    </i>
+              
+                    <i id="option-delete" class="option-delete  fa-solid fa-xmark" lazydev="18f1977adbe1">
+                    
+                    </i>
+              
+                    
+                </div>
+          
+                <label id="lazyid18f1917ddbd1" class="lazyclass18f1917ddbd1" lazydev="18f1917ddbd1" for="" accesskey="">
+                Fieldset name : 
+                </label>
+          
+                <input type="text" id="lazyid18f1917ddc11" class="lazyclass18f1917ddc11" lazydev="18f1917ddc11">
+                <label id="lazyid18f191d61191" class="lazyclass18f191d61191" lazydev="18f191d61191" for="" accesskey="">
+                Fieldset label : 
+                </label>
+          
+                <input type="text" id="lazyid18f191d6a391" class="lazyclass18f191d6a391" lazydev="18f191d6a391">
+                <label id="lazyid18f1917ddc41" class="lazyclass18f1917ddc41" lazydev="18f1917ddc41" for="" accesskey="">
+                Mandatory : 
+                </label>
+          
+                <select id="lazyid18f1917ddc71" class="lazyclass18f1917ddc71" lazydev="18f1917ddc71" selectoption="{true,TRUE,selected},{false,FALSE}">
+                <option value="true">
+                TRUE
+                </option>
+          
+                <option value="false">
+                FALSE
+                </option>
+          
+                
+                </select>
+          
+                <label id="lazyid18f1917ddcb1" class="lazyclass18f1917ddcb1" lazydev="18f1917ddcb1" for="" accesskey="">
+                Default value : 
+                </label>
+          
+                <input type="email" id="input-18f191840b91" class="INPUT-18f191840b91" lazydev="18f191840b91">
+                
+                </fieldset> -->
+          
+                <!-- <fieldset id="lazyid18f191e196a1" class="lazyclass18f191e196a1" lazydev="18f191e196a1">
+                <legend id="lazyid18f191e194c1" class="lazyclass18f191e194c1" lazydev="18f191e194c1">
+                Fieldset_name Fieldsets(select)
+                </legend>
+
+                <div id="custom_fieldset_option" class="custom_fieldset_option" lazydev="18f1972bd4f1">
+                    <i id="option-go-up" class="option-go-up  fa fa-chevron-up" lazydev="18f197386311">
+                    
+                    </i>
+              
+                    <i id="option-go-down" class="option-go-down fa fa-chevron-down" lazydev="18f1977a3b71">
+                    
+                    </i>
+              
+                    <i id="option-delete" class="option-delete  fa-solid fa-xmark" lazydev="18f1977adbe1">
+                    
+                    </i>
+              
+                    
+                </div>
+          
+                <label id="lazyid18f191e19501" class="lazyclass18f191e19501" lazydev="18f191e19501" for="" accesskey="">
+                Fieldset name : 
+                </label>
+          
+                <input type="text" id="lazyid18f191e19531" class="lazyclass18f191e19531" lazydev="18f191e19531">
+                <label id="lazyid18f191e19561" class="lazyclass18f191e19561" lazydev="18f191e19561" for="" accesskey="">
+                Fieldset label : 
+                </label>
+          
+                <input type="text" id="lazyid18f191e195a1" class="lazyclass18f191e195a1" lazydev="18f191e195a1">
+                <div id="div-18f191edb121" class="DIV-18f191edb121" lazydev="18f191edb121">
+                <div id="div-18f1920822f1" class="DIV-18f1920822f1" lazydev="18f1920822f1">
+                <label id="lazyid18f1922fb811" class="lazyclass18f1922fb811" lazydev="18f1922fb811" for="" accesskey="">
+                Option value
+                </label>
+          
+                <input type="text" id="lazyid18f19233ee11" class="lazyclass18f19233ee11" lazydev="18f19233ee11">
+                
+                </div>
+          
+                <div id="lazyid18f1922ddff1" class="lazyclass18f1922ddff1" lazydev="18f1922ddff1">
+                <label id="lazyid18f192394491" class="lazyclass18f192394491" lazydev="18f192394491" for="" accesskey="">
+                Option text
+                </label>
+          
+                <input type="text" id="lazyid18f1923ace91" class="lazyclass18f1923ace91" lazydev="18f1923ace91">
+                
+                </div>
+          
+                
+                </div>
+          
+                <div id="div-18f1925ddb21" class="DIV-18f1925ddb21" lazydev="18f1925ddb21">
+                <button id="lazyid18f1924bcdb1" class="lazyclass18f1924bcdb1" lazydev="18f1924bcdb1" type="button">
+                <icon id="icon-18f1924bcdb1" class="fa fa-bars" style="padding-right: 1em;">
+                
+                </icon>
+          
+                ADD OPTIONS
+                </button>
+          
+                
+                </div>
+          
+                
+                </fieldset> -->
+          
+                <!-- <fieldset id="lazyid18f1927ac6c1" class="lazyclass18f1927ac6c1" lazydev="18f1927ac6c1">
+                <legend id="lazyid18f1927ac4c1" class="lazyclass18f1927ac4c1" lazydev="18f1927ac4c1">
+                Fieldset_text Fieldsets(password)
+                </legend>
+
+                <div id="custom_fieldset_option" class="custom_fieldset_option" lazydev="18f1972bd4f1">
+                    <i id="option-go-up" class="option-go-up  fa fa-chevron-up" lazydev="18f197386311">
+                    
+                    </i>
+              
+                    <i id="option-go-down" class="option-go-down fa fa-chevron-down" lazydev="18f1977a3b71">
+                    
+                    </i>
+              
+                    <i id="option-delete" class="option-delete  fa-solid fa-xmark" lazydev="18f1977adbe1">
+                    
+                    </i>
+              
+                    
+                </div>
+          
+                <label id="lazyid18f1927ac511" class="lazyclass18f1927ac511" lazydev="18f1927ac511" for="" accesskey="">
+                Fieldset name : 
+                </label>
+          
+                <input type="text" id="lazyid18f1927ac541" class="lazyclass18f1927ac541" lazydev="18f1927ac541">
+                <label id="lazyid18f1927ac581" class="lazyclass18f1927ac581" lazydev="18f1927ac581" for="" accesskey="">
+                Fieldset label : 
+                </label>
+          
+                <input type="text" id="lazyid18f1927ac5b1" class="lazyclass18f1927ac5b1" lazydev="18f1927ac5b1">
+                <label id="lazyid18f1927ac5e1" class="lazyclass18f1927ac5e1" lazydev="18f1927ac5e1" for="" accesskey="">
+                Mandatory : 
+                </label>
+          
+                <select id="lazyid18f1927ac621" class="lazyclass18f1927ac621" lazydev="18f1927ac621" selectoption="{true,TRUE,selected},{false,FALSE}">
+                <option value="true">
+                TRUE
+                </option>
+          
+                <option value="false">
+                FALSE
+                </option>
+          
+                
+                </select>
+          
+                <label id="lazyid18f1927ac661" class="lazyclass18f1927ac661" lazydev="18f1927ac661" for="" accesskey="">
+                Default value : 
+                </label>
+          
+                <input type="text" id="lazyid18f1927ac691" class="lazyclass18f1927ac691" lazydev="18f1927ac691">
+                
+                </fieldset> -->
+          
+                <!-- <fieldset id="lazyid18f192ecbdb1" class="lazyclass18f192ecbdb1" lazydev="18f192ecbdb1">
+                <legend id="lazyid18f192ecbbb1" class="lazyclass18f192ecbbb1" lazydev="18f192ecbbb1">
+                Fieldset_text Fieldsets(Checkbox)
+                </legend>
+
+                <div id="custom_fieldset_option" class="custom_fieldset_option" lazydev="18f1972bd4f1">
+                    <i id="option-go-up" class="option-go-up  fa fa-chevron-up" lazydev="18f197386311">
+                    
+                    </i>
+              
+                    <i id="option-go-down" class="option-go-down fa fa-chevron-down" lazydev="18f1977a3b71">
+                    
+                    </i>
+              
+                    <i id="option-delete" class="option-delete  fa-solid fa-xmark" lazydev="18f1977adbe1">
+                    
+                    </i>
+              
+                    
+                </div>
+          
+                <label id="lazyid18f192ecbbf1" class="lazyclass18f192ecbbf1" lazydev="18f192ecbbf1" for="" accesskey="">
+                Fieldset name : 
+                </label>
+          
+                <input type="text" id="lazyid18f192ecbc21" class="lazyclass18f192ecbc21" lazydev="18f192ecbc21">
+                <label id="lazyid18f192ecbc51" class="lazyclass18f192ecbc51" lazydev="18f192ecbc51" for="" accesskey="">
+                Fieldset label : 
+                </label>
+          
+                <input type="text" id="lazyid18f192ecbc91" class="lazyclass18f192ecbc91" lazydev="18f192ecbc91">
+                
+                </fieldset> -->
+          
+                <!-- <fieldset id="lazyid18f192f7f541" class="lazyclass18f192f7f541" lazydev="18f192f7f541">
+                <legend id="lazyid18f192f7f3c1" class="lazyclass18f192f7f3c1" lazydev="18f192f7f3c1">
+                Fieldset_text Fieldsets(Media)
+                </legend>
+
+                <div id="custom_fieldset_option" class="custom_fieldset_option" lazydev="18f1972bd4f1">
+                    <i id="option-go-up" class="option-go-up  fa fa-chevron-up" lazydev="18f197386311">
+                    
+                    </i>
+              
+                    <i id="option-go-down" class="option-go-down fa fa-chevron-down" lazydev="18f1977a3b71">
+                    
+                    </i>
+              
+                    <i id="option-delete" class="option-delete  fa-solid fa-xmark" lazydev="18f1977adbe1">
+                    
+                    </i>
+              
+                    
+                </div>
+          
+                <label id="lazyid18f192f7f401" class="lazyclass18f192f7f401" lazydev="18f192f7f401" for="" accesskey="">
+                Fieldset name : 
+                </label>
+          
+                <input type="text" id="lazyid18f192f7f431" class="lazyclass18f192f7f431" lazydev="18f192f7f431">
+                <label id="lazyid18f192f7f461" class="lazyclass18f192f7f461" lazydev="18f192f7f461" for="" accesskey="">
+                Fieldset label : 
+                </label>
+          
+                <input type="text" id="lazyid18f192f7f4a1" class="lazyclass18f192f7f4a1" lazydev="18f192f7f4a1">
+                <label id="lazyid18f192f7f4d1" class="lazyclass18f192f7f4d1" lazydev="18f192f7f4d1" for="" accesskey="">
+                Mandatory : 
+                </label>
+          
+                <select id="lazyid18f192f7f511" class="lazyclass18f192f7f511" lazydev="18f192f7f511" selectoption="{true,TRUE},{false,FALSE,selected}">
+                <option value="true">
+                TRUE
+                </option>
+          
+                <option value="false">
+                FALSE
+                </option>
+          
+                
+                </select>
+          
+                
+                </fieldset> -->
+          
+                <!-- <fieldset id="lazyid18f1930b5ab1" class="lazyclass18f1930b5ab1" lazydev="18f1930b5ab1">
+                <legend id="lazyid18f1930b58b1" class="lazyclass18f1930b58b1" lazydev="18f1930b58b1">
+                Fieldset_text Fieldsets(textarea)
+                </legend>
+
+                <div id="custom_fieldset_option" class="custom_fieldset_option" lazydev="18f1972bd4f1">
+                    <i id="option-go-up" class="option-go-up  fa fa-chevron-up" lazydev="18f197386311">
+                    
+                    </i>
+              
+                    <i id="option-go-down" class="option-go-down fa fa-chevron-down" lazydev="18f1977a3b71">
+                    
+                    </i>
+              
+                    <i id="option-delete" class="option-delete  fa-solid fa-xmark" lazydev="18f1977adbe1">
+                    
+                    </i>
+              
+                    
+                </div>
+          
+                <label id="lazyid18f1930b58f1" class="lazyclass18f1930b58f1" lazydev="18f1930b58f1" for="" accesskey="">
+                Fieldset name : 
+                </label>
+          
+                <input type="text" id="lazyid18f1930b5921" class="lazyclass18f1930b5921" lazydev="18f1930b5921">
+                <label id="lazyid18f1930b5961" class="lazyclass18f1930b5961" lazydev="18f1930b5961" for="" accesskey="">
+                Fieldset label : 
+                </label>
+          
+                <input type="text" id="lazyid18f1930b59a1" class="lazyclass18f1930b59a1" lazydev="18f1930b59a1">
+                <label id="lazyid18f1930b59d1" class="lazyclass18f1930b59d1" lazydev="18f1930b59d1" for="" accesskey="">
+                Mandatory : 
+                </label>
+          
+                <select id="lazyid18f1930b5a11" class="lazyclass18f1930b5a11" lazydev="18f1930b5a11" selectoption="{true,TRUE,selected},{false,FALSE}">
+                <option value="true">
+                TRUE
+                </option>
+          
+                <option value="false">
+                FALSE
+                </option>
+          
+                
+                </select>
+          
+                <label id="lazyid18f1930b5a41" class="lazyclass18f1930b5a41" lazydev="18f1930b5a41" for="" accesskey="">
+                Default value : 
+                </label>
+          
+                <textarea id="textarea-18f1931c6991" class="TEXTAREA-18f1931c6991" lazydev="18f1931c6991" rows="4">      
+                </textarea>
+          
+                
+                </fieldset> -->
+          
+                <!-- <fieldset id="lazyid18f193501c71" class="lazyclass18f193501c71" lazydev="18f193501c71">
+                <legend id="lazyid18f193501a61" class="lazyclass18f193501a61" lazydev="18f193501a61">
+                Fieldset_text Fieldsets(Color)
+                </legend>
+
+                <div id="custom_fieldset_option" class="custom_fieldset_option" lazydev="18f1972bd4f1">
+                    <i id="option-go-up" class="option-go-up  fa fa-chevron-up" lazydev="18f197386311">
+                    
+                    </i>
+              
+                    <i id="option-go-down" class="option-go-down fa fa-chevron-down" lazydev="18f1977a3b71">
+                    
+                    </i>
+              
+                    <i id="option-delete" class="option-delete  fa-solid fa-xmark" lazydev="18f1977adbe1">
+                    
+                    </i>
+              
+                    
+                </div>
+          
+                <label id="lazyid18f193501aa1" class="lazyclass18f193501aa1" lazydev="18f193501aa1" for="" accesskey="">
+                Fieldset name : 
+                </label>
+          
+                <input type="text" id="lazyid18f193501ae1" class="lazyclass18f193501ae1" lazydev="18f193501ae1">
+                <label id="lazyid18f193501b21" class="lazyclass18f193501b21" lazydev="18f193501b21" for="" accesskey="">
+                Fieldset label : 
+                </label>
+          
+                <input type="text" id="lazyid18f193501b51" class="lazyclass18f193501b51" lazydev="18f193501b51">
+                <label id="lazyid18f193501b91" class="lazyclass18f193501b91" lazydev="18f193501b91" for="" accesskey="">
+                Mandatory : 
+                </label>
+          
+                <select id="lazyid18f193501bc1" class="lazyclass18f193501bc1" lazydev="18f193501bc1" selectoption="{true,TRUE,selected},{false,FALSE}">
+                <option value="true">
+                TRUE
+                </option>
+          
+                <option value="false">
+                FALSE
+                </option>
+          
+                
+                </select>
+          
+                <label id="lazyid18f193501c01" class="lazyclass18f193501c01" lazydev="18f193501c01" for="" accesskey="">
+                Default value : 
+                </label>
+          
+                <input type="color" id="input-18f1935a26a1" class="INPUT-18f1935a26a1" lazydev="18f1935a26a1">
+                
+                </fieldset> -->
+          
+                <!-- <fieldset id="lazyid18f193700e41" class="lazyclass18f193700e41" lazydev="18f193700e41">
+                <legend id="lazyid18f193700c41" class="lazyclass18f193700c41" lazydev="18f193700c41">
+                Fieldset_text Fieldsets(WYSIWYG)
+                </legend>
+
+                <div id="custom_fieldset_option" class="custom_fieldset_option" lazydev="18f1972bd4f1">
+                    <i id="option-go-up" class="option-go-up  fa fa-chevron-up" lazydev="18f197386311">
+                    
+                    </i>
+              
+                    <i id="option-go-down" class="option-go-down fa fa-chevron-down" lazydev="18f1977a3b71">
+                    
+                    </i>
+              
+                    <i id="option-delete" class="option-delete  fa-solid fa-xmark" lazydev="18f1977adbe1">
+                    
+                    </i>
+              
+                    
+                </div>
+          
+                <label id="lazyid18f193700c81" class="lazyclass18f193700c81" lazydev="18f193700c81" for="" accesskey="">
+                Fieldset name : 
+                </label>
+          
+                <input type="text" id="lazyid18f193700cb1" class="lazyclass18f193700cb1" lazydev="18f193700cb1">
+                <label id="lazyid18f193700cf1" class="lazyclass18f193700cf1" lazydev="18f193700cf1" for="" accesskey="">
+                Fieldset label : 
+                </label>
+          
+                <input type="text" id="lazyid18f193700d21" class="lazyclass18f193700d21" lazydev="18f193700d21">
+                <label id="lazyid18f193700d61" class="lazyclass18f193700d61" lazydev="18f193700d61" for="" accesskey="">
+                Mandatory : 
+                </label>
+          
+                <select id="lazyid18f193700da1" class="lazyclass18f193700da1" lazydev="18f193700da1" selectoption="{true,TRUE,selected},{false,FALSE}">
+                <option value="true">
+                TRUE
+                </option>
+          
+                <option value="false">
+                FALSE
+                </option>
+          
+                
+                </select>
+          
+                
+                </fieldset> -->
+          
+                
+                </fieldset>
+          
+                
+            </form>
+            <%- include('jsa-sidebar') %>
+            <script src="/public/function/custom_table.js"></script>
+        </section>
+    </body>
+</html>

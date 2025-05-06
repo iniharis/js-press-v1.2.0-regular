@@ -1,0 +1,159 @@
+
+<html>
+    <head>
+        <title>JS Admin User</title>
+        <%- include('jsa-head') %>
+    </head>
+    <body>
+        <section id="js-press-dashboard-container" class="js-press-dashboard-container" lazydev="18e0835fb461">
+            <div id="js-admin-users-dashboard" class="js-admin-users-dashboard" lazydev="18e08368b351">
+            <div id="js-users-page-head" class="js-users-page-head" lazydev="18e08a3790e1">
+            <h4 id="js-press-users-title" class="js-press-users-title" lazydev="18e08a465971">
+            
+          Users
+      
+            </h4>
+      
+            <div id="js-press-head-menu-users" class="js-press-head-menu-users" lazydev="18e08d749551">
+            <h6 id="add-new-users-button" class="add-new-users-button" lazydev="18e08d843b41">
+            <icon id="icon-18e08d843b41" class="fa fa-user-plus" style="padding-right: 1em;">
+            
+            </icon>
+      
+            
+          Add New User
+      
+            </h6>
+            <!-- <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                  const button = document.getElementById('add-new-users-button');
+                  if (button) {
+                      button.addEventListener('click', async () => {
+                          try {
+                              const response = await fetch('/api/check');
+                              if (!response.ok) {
+                                  throw new Error('Network response was not ok');
+                              }
+                              const data = await response.json();
+                              console.log(data.msg);
+                              // Lakukan sesuatu dengan data yang diterima dari server
+                          } catch (error) {
+                              console.error('There was a problem with the fetch operation:', error);
+                          }
+                      });
+                  }
+              });
+          </script> -->
+          
+      
+            <input type="search" id="js-press-folder-search-users" class="js-press-folder-search-users" lazydev="18e08d9525c1" placeholder="Search">
+            <h6 id="js-press-folder-searchbutton-users" class="js-press-folder-searchbutton-users" lazydev="18e08dc683a1">
+            <icon id="icon-18e08dc683a1" class="fa fa-search" style="padding-right: 1em;">
+            
+            </icon>
+      
+            
+          <br>
+            
+      
+            </h6>
+      
+            
+            </div>
+      
+            
+            </div>
+      
+            <div id="js-users-page-body" class="js-users-page-body" lazydev="18e08a400c91">
+              <div id="loading-icon" class="loading-icon none-mode">
+                <i class="fas fa-spinner icon-spin"></i> <!-- Font Awesome spinner icon -->
+              </div>
+            <!-- <div id="js-press-users-list-container" class="js-press-users-list-container" lazydev="18e08a5bfd61">
+            <div id="users-list-wrapper" class="users-list-wrapper" lazydev="18e08b991641">
+            <img id="js-press-admin-users-picture" class="js-press-admin-users-picture" lazydev="18e17bb42511" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1">
+            <span id="js-press-user-list-title" class="js-press-user-list-title" lazydev="18e08a7545f1">
+            
+          Mayasari Bakti
+      
+            </span>
+      
+            
+            </div>
+      
+            <div id="js-press-user-list-action" class="js-press-user-list-action" lazydev="18e08a7ebed1">
+            <span id="lazyid18e08a805dd1" class="lazyclass18e08a805dd1" lazydev="18e08a805dd1">
+            
+          Actions
+      
+            </span>
+      
+            <div id="div-18e08a8f77f1" class="DIV-18e08a8f77f1" lazydev="18e08a8f77f1">
+            <i id="js-press-user-list-edit" class="js-press-user-list-edit  fa fa-address-card" lazydev="18e08ab35c71" title="Edit User">
+            
+            </i>
+      
+            <i id="js-press-user-list-delete" class="js-press-user-list-delete  fa fa-trash" lazydev="18e08b303151" title="Delete">
+            
+            </i>
+      
+            
+            </div>
+      
+            
+            </div>
+      
+            
+            </div> -->
+      
+            <div id="js-press-user-pagination-container" class="js-press-user-pagination-container" lazydev="18e08dfd5951">
+            <div id="js-press-user-pagination" class="js-press-user-pagination" lazydev="18e08e073531">
+            &lt;&lt;
+            </div>
+<!--       
+            <div id="lazyid18e08e2d5b31" class="lazyclass18e08e2d5b31 js-press-user-pagination" lazydev="18e08e2d5b31">
+            &lt;
+            </div>
+      
+            <div id="lazyid18e0d6683071" class="lazyclass18e0d6683071 js-press-user-pagination" lazydev="18e0d6683071">
+            1
+            </div>
+      
+            <div id="lazyid18e0d6592b81" class="lazyclass18e0d6592b81 js-press-user-pagination" lazydev="18e0d6592b81">
+            2
+            </div>
+      
+            <div id="lazyid18e0d659ca01" class="lazyclass18e0d659ca01 js-press-user-pagination" lazydev="18e0d659ca01">
+            3
+            </div>
+      
+            <div id="lazyid18e0d65a6d81" class="lazyclass18e0d65a6d81 js-press-user-pagination" lazydev="18e0d65a6d81">
+            4
+            </div>
+      
+            <div id="lazyid18e0d65af501" class="lazyclass18e0d65af501 js-press-user-pagination" lazydev="18e0d65af501">
+            5
+            </div>
+      
+            <div id="lazyid18e0d66904f1" class="lazyclass18e0d66904f1 js-press-user-pagination" lazydev="18e0d66904f1">
+            &gt;
+            </div>
+      
+            <div id="lazyid18e0d65b7ef1" class="lazyclass18e0d65b7ef1 js-press-user-pagination" lazydev="18e0d65b7ef1">
+            &gt;&gt;
+            </div> -->
+      
+            
+            </div>
+      
+            
+            </div>
+      
+            
+            </div>
+            <%- include('jsa-sidebar') %>
+            <script src="/public/function/user.js"></script>
+            
+        </section>
+        
+    </body>
+</html>

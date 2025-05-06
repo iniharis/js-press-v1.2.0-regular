@@ -1,0 +1,65 @@
+
+  
+
+        input:focus {
+          outline: none;
+        }
+        
+        @media only screen and (orientation: landscape) {
+          html {
+            font-size: 1vw; /* 1em for landscape mode */
+          }
+        }
+        
+        @media only screen and (orientation: portrait) {
+          html {
+            font-size: 2vh; /* 1em for potrait mode */
+          }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        html {
+            font-size: 2vmin; /* 1em for Tablet mode */
+          }
+        }
+        @media only screen and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 1/1) {
+         html {
+            font-size: 4vmax;/* 1em for 1:1 Ratio mode */
+          }
+        }
+               
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: grayscale(100%) blur(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: grayscale(0%) blur(0px);
+  }
+}
+.blog-list {
+  opacity: 0;
+  filter: grayscale(100%) blur(5px); 
+  animation: fadeIn 1.5s ease forwards; 
+}
+
+body {
+  font-family: Lato;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(224, 224, 224, 1);
+  overflow-x: hidden;
+  display: flex;
+flex-direction: column;
+min-height: 100vh;
+        
+        
+               
+}
+  

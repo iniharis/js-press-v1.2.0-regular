@@ -1,0 +1,52 @@
+
+<div id="js-admin-sidebar-menu" class="js-admin-sidebar-menu" 
+        lazydev="18e0836869e1" style="opacity: 1; transform: translate(0px, 0px);">
+          <img id="js-admin-logo" class="js-admin-logo" 
+          lazydev="18e083882761" 
+          src="/public/logo/Logo.png">
+          <h1 id="js-username-sidebar" class="js-username-sidebar" lazydev="18e5ff66f911"></h1>
+  
+            <div id="js-press-dashboards-menu" class="js-press-dashboards-menu" lazydev="18e08476ce21">
+            <div class="js-sidebar-admin-menu">
+                <% if (Data && Data.length > 0) { %>
+                    <% Data.forEach(function(item) { %>
+                        <% if (item.type === 'sidebar-menu') { %>
+                            <a href="<%= item.href %>" id="js-admin-menus-<%= item.index %>" class="js-admin-menus">
+                                <span id="js-span-menu-<%= item.index %>" class="SPAN-18e083b438d1">
+                                    <%= item.text %>
+                                </span>
+                            </a>
+                        <% } %>
+                    <% }); %>
+                <% } %>
+            </div>
+            
+            <div id="js-logout-container" class="js-logout-container" lazydev="18e5ff8cca61">
+                  <button id="js-logout-button" class="js-logout-button" lazydev="18e5ffa6b561" title="Logout" type="button">
+                  <icon id="icon-18e5ffa6b561" class="fa fa-sign-in" style="padding-right: 1em;">
+                  
+                  </icon>
+            
+                  Logout
+                  </button>
+            
+                  
+            </div>
+            </div>
+            <%- include('../setup-check') %>
+            <%- include('jsa-account') %>
+            <script>
+                const getuserdata = async()=>{
+                    try {
+                        const response = await fetch('/api/adm/get-this-users');
+                        if(!response.ok){
+                            throw new Error('fetching failed');
+                        }
+                        const json = await response.json();
+                        const user = json.user;
+                        document.getElementById('js-username-sidebar').textContent = `Hi, ${user.username}`;
+                    } catch (error) {}
+                }
+                getuserdata();
+            </script>
+</div>

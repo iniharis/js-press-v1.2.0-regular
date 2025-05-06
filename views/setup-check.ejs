@@ -1,0 +1,37 @@
+<script>
+     const refreshToken = async () => {
+    const pathname = window.location.pathname;
+    // console.log(pathname)
+    try {
+        const response = await fetch(`/api/token`);
+        if (response.status === 200) {
+            if (pathname === '/login') {
+                window.location.href = '/admin';
+            }
+        } else {
+            if (pathname.startsWith('/admin')) {
+                window.location.href = '/login';
+            }
+        }
+    } catch (error) {
+        // Tidak melakukan apa pun karena tidak ingin mencetak error ke konsol
+    }
+}
+refreshToken();
+    // Mendapatkan hasil dari API saat halaman dimuat
+    window.onload = async () => {
+        try {
+            const response = await fetch('/api/isAdmin');
+            const data = await response.json();
+
+            if (data.message === 'Tidak ada') {
+                // Redirect ke halaman /setup jika tidak ada admin
+                window.location.href = '/setup';
+            }
+        } catch (error) {
+            console.error('Terjadi kesalahan:', error);
+            // Menampilkan pesan kesalahan jika gagal mengakses API
+            document.getElementById('result').innerText = 'Terjadi kesalahan saat mengakses API';
+        }
+    };
+</script>

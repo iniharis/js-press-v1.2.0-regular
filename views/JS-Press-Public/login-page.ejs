@@ -1,0 +1,441 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" data-js-framework="true"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js" data-js-framework="true"></script>
+
+  
+<link id="Bootstrap450" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" data-css-framework="true" data-css-name="Bootstrap 4.5.0">
+<link id="videojs830" rel="stylesheet" href="https://vjs.zencdn.net/8.3.0/video-js.css" data-css-framework="true" data-css-name="Video Js">
+
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800;900&display=swap">
+
+  
+</head>
+          <body>
+            <style id="custom-css">
+      .error-text{
+  width: 100% !important; 
+  text-align: center; 
+  font-size: 12px;
+  color:red;
+}
+              .Js-press-login-container {
+        
+        display: flex;
+        width: 100dvw;
+        height: 100svh;
+        gap: 1em;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+        overflow-x: hidden;
+        background-color: rgba(171, 171, 171, 1);
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        transition: 0.2s;
+        animation: animation-fade-in-backward 0.8s ease 0s 1 normal backwards;;
+        background-image: linear-gradient(66deg, rgba(214, 214, 214, 0.7) 18%, rgba(186, 186, 186, 0.8) 62%),  url('');;
+        box-sizing: border-box;
+        }
+        
+        
+                         /*---- Animation ----*/
+        @keyframes animation-fade-in-backward {
+         0% {
+           opacity: 0;
+           transform: scale(1.4);
+         }
+        
+         100% {
+           opacity: 1;
+           transform: scale(1);
+         }
+        }
+             /*---- Animation End ----*/
+        .js-press-login-wrapper {
+        
+        display: flex;
+        min-height: 67vh;
+        gap: 1em;
+        flex-grow: 0.2;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #161d1c;
+        padding-top: 1%;
+        padding-right: 1%;
+        padding-bottom: 1%;
+        padding-left: 1%;
+        animation: animation-fade-in-from-bottom 1s ease 0.5s 1 normal backwards;;
+        border-radius: 20px 20px 20px 20px ;
+        box-shadow:  0.16em -0.34em 1.36em -0.06em rgba(69, 69, 69, 0.65);
+        box-sizing: border-box;
+        }
+        
+        
+        
+        @media screen and (max-width: 600px) {
+        .js-press-login-wrapper {
+        
+        flex-grow: 1;
+        }
+        
+        }      /*---- Animation ----*/
+        @keyframes animation-fade-in-from-bottom {
+         0% {
+           opacity: 0;
+           transform: translateY(50px);
+         }
+        
+         100% {
+           opacity: 1;
+           transform: translateY(0);
+         }
+        }
+             /*---- Animation End ----*/
+        .js-press-logo-wrapper {
+        
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 1%;
+        padding-right: 1%;
+        padding-bottom: 1%;
+        padding-left: 1%;
+        box-sizing: border-box;
+        }
+        
+        
+        
+        .img-18df39dd6511 {
+        
+        display: block;
+        width: 130px;
+        object-fit: contain;
+        }
+        
+        
+        
+        @media screen and (max-width: 600px) {
+        .img-18df39dd6511 {
+        
+        width: 100px;
+        }
+        
+        }
+        .DIV-18df3a5de691 {
+        
+        display: flex;
+        min-height: 30px;
+        gap: 1em;
+        flex-grow: 0.3;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 1%;
+        padding-right: 1%;
+        padding-bottom: 1%;
+        padding-left: 1%;
+        box-sizing: border-box;
+        }
+        
+        
+        
+        .INPUT-18df3a72beb1 {
+        
+        width: 80%;
+        background-color: rgba(89, 89, 89, 0.31);
+        padding-top: 10px;
+        padding-right: 4px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        outline-style: none;
+        outline-width: 0.25em;
+        outline-color: rgba(0, 0, 0, 1);
+        outline-style: none;
+        border-style: none;
+        border-color: rgba(NaN, NaN, NaN, 1);
+        border-radius: 10px 10px 10px 10px ;
+        color: #5c5c5c !important;
+        font-size: 15px;
+        }
+        
+        
+        
+        .INPUT-18df3a72beb1:hover {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        }
+        
+        
+        .INPUT-18df3a72beb1:active {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        }
+        
+        
+        @media screen and (max-width: 900px) {
+        .INPUT-18df3a72beb1 {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        }
+        
+        }
+        @media screen and (max-width: 600px) {
+        .INPUT-18df3a72beb1 {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        }
+        
+        }
+        .INPUT-18df3aad6221 {
+        
+        width: 80%;
+        background-color: rgba(89, 89, 89, 0.35);
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        outline-style: none;
+        outline-width: 0.25em;
+        outline-color: rgba(0, 0, 0, 1);
+        outline-style: none;
+        border-style: none;
+        border-color: rgba(NaN, NaN, NaN, 1);
+        border-radius: 10px 10px 10px 10px ;
+        color: #6e6e6e !important;
+        font-size: 15px;
+        }
+        
+        
+        
+        .INPUT-18df3aad6221:hover {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        }
+        
+        
+        .INPUT-18df3aad6221:active {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        }
+        
+        
+        @media screen and (max-width: 900px) {
+        .INPUT-18df3aad6221 {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        }
+        
+        }
+        @media screen and (max-width: 600px) {
+        .INPUT-18df3aad6221 {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        }
+        
+        }
+        .remember-me-container {
+        
+        display: flex;
+        min-height: 30px;
+        gap: 1em;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        padding-top: 1%;
+        padding-right: 1%;
+        padding-bottom: 1%;
+        padding-left: 12%;
+        box-sizing: border-box;
+        }
+        
+        
+        
+        .remember-me-text {
+        
+        max-width: 100%;
+        padding-top: 1%;
+        padding-right: 1%;
+        padding-bottom: 1%;
+        padding-left: 1%;
+        color: #a6a6a6;
+        font-weight: 700;
+        }
+        
+        
+        
+        .lazyclass18df3b27f051 {
+        
+        display: flex;
+        min-height: 30px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        box-sizing: border-box;
+        }
+        
+        
+        
+        .lazyclass18dd05f375a1 {
+        
+        flex-grow: 0.8;
+        background-color: rgba(204, 174, 25, 1);
+        margin-top: 2%;
+        padding-top: 7px;
+        padding-right: 40px;
+        padding-bottom: 7px;
+        padding-left: 40px;
+        transition: 0.5s;
+        border-style: solid;
+        border-top-width: 0.01px;
+        border-right-width: 0.1px;
+        border-bottom-width: 0.1px;
+        border-left-width: 0.1px;
+        border-color: rgba(120, 120, 120, 0.255);
+        border-radius: 7px 7px 7px 7px ;
+        box-shadow:  0.16em 0.04em 0.62em -0.06em rgba(43, 43, 43, 0.5);
+        color: #161d1c;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 13px;
+        }
+        
+        
+        
+        .lazyclass18dd05f375a1:hover {
+        
+        background-color: #161d1c;
+        border-color: rgba(183, 148, 52, 1);
+        box-shadow:  0.4em -0.34em 1.48em 0em rgba(34, 32, 32, 0.5);
+        color: #bea941;
+        }
+        
+        
+        .lazyclass18dd05f375a1:active {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        }
+        
+        
+        @media screen and (max-width: 900px) {
+        .lazyclass18dd05f375a1 {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        }
+        
+        }
+        @media screen and (max-width: 600px) {
+        .lazyclass18dd05f375a1 {
+        
+        border-color: rgba(NaN, NaN, NaN, 1);
+        font-size: 11px;
+        }
+        
+        }
+            </style>
+            <section id="Js-press-login-container" class="Js-press-login-container" lazydev="18df3a1339c1">
+              <div id="js-press-login-wrapper" class="js-press-login-wrapper" lazydev="18df3a33dfa1">
+              <div id="js-press-logo-wrapper" class="js-press-logo-wrapper" lazydev="18df39db8ca1" style="opacity: 1; transform: translate(0px, 0px);">
+              
+        
+        
+        
+        
+        <img id="img-18df39dd6511" class="img-18df39dd6511" lazydev="18df39dd6511" src="/public/logo/Logo.png">
+        
+        
+        
+        
+        
+              </div>
+        
+              <div id="div-18df3a5de691" class="DIV-18df3a5de691" lazydev="18df3a5de691">
+              <input type="text" id="input-username" class="INPUT-18df3a72beb1" lazydev="18df3a72beb1" placeholder="Username">
+              <input type="password" id="input-password" class="INPUT-18df3aad6221" lazydev="18df3aad6221" placeholder="Password">
+              
+              </div>
+        
+              <div id="remember-me-container" class="remember-me-container" lazydev="18df3a5dfd91">
+              <input type="checkbox" id="remember-me-check" class="INPUT-18df3ae616a1" lazydev="18df3ae616a1">
+              <span id="remember-me-text" class="remember-me-text" lazydev="18df3afb92a1">
+              
+          Stay signed in
+        
+              </span>
+        
+              
+              </div>
+        
+              <div id="lazyid18df3b27f051" class="lazyclass18df3b27f051" lazydev="18df3b27f051">
+              <button id="login-form" class="lazyclass18dd05f375a1" lazydev="18dd05f375a1" type="button">
+              <icon id="icon-18dd05f375a1" class="fa fa-sign-in" style="padding-right: 1em;">
+              
+              </icon>
+        
+              Sign In
+              </button>
+              <script>
+                document.getElementById('login-form').addEventListener('click', async (event) => {
+                  event.preventDefault();
+                  let remembercheck = false;
+                  const rememberMeCheckbox = document.getElementById('remember-me-check');
+                  if(rememberMeCheckbox && rememberMeCheckbox.checked === true){
+                    remembercheck = true;
+                  }
+                  const username = document.getElementById('input-username').value;
+                  const password = document.getElementById('input-password').value;
+                  // console.log(JSON.stringify({ username, password }))
+                  try {
+                    const response = await fetch('/api/login', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({ username, password,rememberMe: remembercheck })
+                    });
+              
+                    const data = await response.json();
+                    if(data.msg === 'success'){
+                      window.location.href = '/admin'
+                    } else {
+                      document.getElementById('error-text').innerHTML = `${data.msg}`;
+                    }
+                    // console.log(data); // Outputkan pesan dari server
+                    // Lakukan sesuatu sesuai respons dari server
+                  } catch (error) {
+                    console.error('Error:', error);
+                    
+                    // Tangani kesalahan jika terjadi
+                  }
+                });
+              </script>
+        
+              </div>
+        
+              
+              </div>
+        
+              <p class="error-text" id="error-text"></p>
+            </section>
+          
+
+          <script id="custom-js">
+
+          </script>
+
+          <%- include('../setup-check') %>    
+        </body>
+            </html>
