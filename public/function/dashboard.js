@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
     try {
         const response = await fetch('/api/adm/get-dashboard');
-        const response2 = await fetch(`/api/adm/component?keyword=&dataoffset=${0}`);
+        const response2 = await fetch(`/api/adm/component?keyword=&dataoffset=${0}&searchFolder=all-folder`);
         const response3 = await fetch(`/api/adm/get-pages?keyword=&dataoffset=${0}&searchFolder=all-folder`);
         
         if (!response.ok) {
